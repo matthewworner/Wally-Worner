@@ -303,6 +303,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: row;
+            /* Single image on mobile */
+        }
+
+        /* Page 8 specific - hide knight on mobile, show only house */
+        .page8-knight {
+            display: none;
+        }
+
+        .page8-house {
+            max-width: 100%;
+            max-height: 100%;
         }
 
         /* Desktop - Two Column Layout */
@@ -351,6 +363,21 @@
             .page-number {
                 bottom: 10px;
                 font-size: 14px;
+            }
+
+            /* Page 8 - show both images on desktop */
+            .illustration-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .page8-knight {
+                display: block;
+                width: 60%;
+            }
+
+            .page8-house {
+                width: 80%;
             }
         }
 
@@ -631,9 +658,9 @@
         <!-- Page 8: The Legacy -->
         <div class="page">
             <div class="illustration">
-                <div class="illustration-group" style="flex-direction: column; gap: 15px;">
-                    <img src="worner.png" alt="Sir Worner" style="width: 60%;" class="anim-float">
-                    <img src="house_stella.png" alt="Stella House" style="width: 80%;">
+                <div class="illustration-group">
+                    <img src="worner.png" alt="Sir Worner" class="anim-float page8-knight">
+                    <img src="house_stella.png" alt="Stella House" class="page8-house">
                 </div>
             </div>
             <div class="text-content">
