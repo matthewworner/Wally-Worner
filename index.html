@@ -241,7 +241,8 @@
         }
 
         /* Drop Cap */
-        .text-content p:first-of-type::first-letter {
+        /* Drop Cap - Only applied to the FIRST paragraph of the PAGE, but NOT inside special containers like teaser-text */
+        .text-content>p:first-of-type::first-letter {
             font-family: 'Chewy', cursive;
             font-size: 3.5em;
             float: left;
