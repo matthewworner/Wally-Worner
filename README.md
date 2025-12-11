@@ -15,7 +15,7 @@ This web application is a fully interactive storybook designed to engage childre
 
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/matthewworner/Sir-Worner.git
+    git clone https://github.com/matthewworner/Wally-Worner.git
     ```
 2.  **Open the Storybook**:
     Locate `index.html` in the root directory and double-click to open it in any modern web browser (Chrome, Safari, Firefox, Edge).

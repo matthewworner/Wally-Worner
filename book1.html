@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wally Worner and the Siege of Malta</title>
+    <!-- Premium Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chewy&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body data-total-rabbits="8">
+    <audio id="snd-turn" src="https://assets.mixkit.co/active_storage/sfx/2045/2045-preview.mp3"></audio>
+    <audio id="snd-yay" src="https://assets.mixkit.co/active_storage/sfx/1114/1114-preview.mp3"></audio>
+    <audio id="snd-ocean" src="https://assets.mixkit.co/active_storage/sfx/1188/1188-preview.mp3" loop></audio>
+    <audio id="snd-sword" src="https://assets.mixkit.co/active_storage/sfx/1271/1271-preview.mp3"></audio>
+    <audio id="snd-cannon" src="https://assets.mixkit.co/active_storage/sfx/1703/1703-preview.mp3"></audio>
+    <audio id="snd-bells" src="https://assets.mixkit.co/active_storage/sfx/573/573-preview.mp3"></audio>
+    <audio id="snd-pop" src="https://assets.mixkit.co/active_storage/sfx/2578/2578-preview.mp3"></audio>
+    <audio id="snd-siren" src="https://assets.mixkit.co/active_storage/sfx/543/543-preview.mp3"></audio>
+    <audio id="snd-plane" src="https://assets.mixkit.co/active_storage/sfx/936/936-preview.mp3"></audio>
+
+    <div class="rabbit-counter-panel"
+        style="position: fixed; top: 10px; right: 20px; z-index: 151; background: #fff8e1; border: 2px solid #5d4037; border-radius: 20px; padding: 5px 15px; font-family: 'Chewy', cursive; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 5px rgba(0,0,0,0.2);">
+        <img src="assets/images/rabbit.png" alt="Rabbit" style="width: 40px;"> <span id="rabbit-count">0/8 Found</span>
+    </div>
+
+    <!-- Home Button -->
+    <div style="position: fixed; top: 20px; left: 20px; z-index: 150;">
+        <button onclick="window.location.href='index.html'"
+            style="padding: 10px; font-family: 'Chewy'; font-size: 20px; border-radius: 10px; background: #FFD700; border: 3px solid #5d4037; color: #5d4037; cursor: pointer; box-shadow: 0 4px 5px rgba(0,0,0,0.3);">
+            🏠 Home
+        </button>
+    </div>
+
+    <div class="game-tip" id="gameTip"
+        style="display: none; position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); background: #fff; padding: 15px 30px; border-radius: 50px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); z-index: 160; animation: bounce 2s infinite;">
+        <strong>Psst!</strong> Help Wally find the hidden rabbits on each page! 🐰
+    </div>
+
+    <div class="book-container">
+        <!-- COVER -->
+        <div class="page cover-page active">
+            <h1 class="cover-title">Wally Worner<br>and the<br>Siege of Malta</h1>
+
+            <div class="cover-collage">
+                <img src="assets/images/castle.png" class="cover-bg-img"
+                    style="left: 10%; top: 20%; transform: rotate(-10deg); width: 150px;">
+                <img src="assets/images/ship.png" class="cover-bg-img"
+                    style="right: 10%; top: 30%; transform: rotate(10deg); width: 150px;">
+                <img src="assets/images/rabbit.png" class="cover-bg-img"
+                    style="bottom: 10%; right: 20%; width: 80px; opacity: 1;">
+
+                <img src="assets/images/worner.png?v=2" alt="Wally Worner" class="cover-main-img">
+            </div>
+
+            <p class="cover-decoration">A Tale of Courage, Honor, and Rabbits</p>
+
+            <button class="start-btn" onclick="nextPage()">Start Reading</button>
+        </div>
+
+        <!-- PAGE 1 -->
+        <div class="page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="bottom: 85px; left: 30px; transform: rotate(10deg);" onclick="foundRabbit(this)">
+            <div class="illustration" onclick="animateElement(this, 'wiggle')">
+                <img src="assets/images/worner.png?v=2" alt="Wally Worner" class="anim-float click-wiggle">
+            </div>
+            <div class="text-content">
+                <h1>Wally Worner and the Siege of Malta</h1>
+                <p><strong>A Tale of Courage and Honor</strong></p>
+                <p style="margin-top: 20px;">Long ago in 1565, there lived a brave knight named Wally Worner. His name
+                    meant "guardian warrior," and he carried a bright yellow shield with a bold red stripe and six red
+                    flowers.</p>
+                <p style="margin-top: 15px;">He was never alone! Always by his side were his trusty squires:
+                    <strong>Marco</strong>, <strong>Seraphine</strong>, and <strong>Lola</strong>.
+                </p>
+                <p style="margin-top: 15px;">His family motto was: <em>"Non nobis tantum nati"</em> — "Not born for
+                    ourselves alone." It meant they lived to help others!</p>
+            </div>
+            <div class="page-number">1</div>
+        </div>
+
+        <!-- PAGE 2 -->
+        <div class="page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="top: 20px; left: 40px; transform: rotate(-20deg);" onclick="foundRabbit(this)">
+            <div class="illustration" onclick="animateElement(this, 'sails')">
+                <img src="assets/images/castle.png" alt="Fort St Angelo" class="anim-glow"
+                    style="width: 45%; margin-right: 10px;">
+                <img src="assets/images/real_stella/staircase.jpg" alt="Attic Stairs" class="anim-glow"
+                    style="border: 5px solid #fff; width: 45%;">
+            </div>
+            <div class="text-content">
+                <h1>The Attic Discovery</h1>
+                <p>One sunny morning, Wally was exploring the dusty attic of his home, fittingly called
+                    <strong>"Stella"</strong> (The Star) in the town of Senglea.
+                </p>
+                <p style="margin-top: 15px;">He found an old wooden chest. Inside was a dusty scroll!</p>
+                <p style="margin-top: 15px;">"Look Squires!" he shouted. "It's a map of secret tunnels beneath our
+                    house!"</p>
+                <p style="margin-top: 15px;">The squires Marco and Seraphine gasped. Little Lola just chewed on a toy
+                    shield.</p>
+            </div>
+            <div class="page-number">2</div>
+        </div>
+
+        <!-- PAGE 3 -->
+        <div class="page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="bottom: 120px; right: 50px; transform: rotate(15deg);" onclick="foundRabbit(this)">
+            <div class="illustration" onclick="animateElement(this, 'wiggle')">
+                <img src="assets/images/worner.png?v=2" alt="Wally Training" class="click-wiggle">
+            </div>
+            <div class="text-content">
+                <h1>Training Day</h1>
+                <p>Before they could explore, they had to train.</p>
+                <p style="margin-top: 15px;"><em>Clang! Clang!</em> went their wooden swords.</p>
+                <p style="margin-top: 15px;">"Good work, Marco!" Wally cheered. "Keep your shield up, Seraphine!"</p>
+                <p style="margin-top: 15px;">They practiced defending the "fortress" (which was actually the kitchen
+                    table). Nanna gave them warm pastizzi for energy.</p>
+            </div>
+            <div class="page-number">3</div>
+        </div>
+
+        <!-- PAGE 4 -->
+        <div class="page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="top: 80px; left: 80px; transform: rotate(45deg);" onclick="foundRabbit(this)">
+            <div class="interactive-overlay" style="bottom: 80px; left: 40px; font-size: 50px;"
+                onclick="fireCannon(this)" title="Fire Cannon!">💣</div>
+            <div class="illustration" onclick="animateElement(this, 'sail')">
+                <img src="assets/images/ship.png" alt="Pirate Ships" class="anim-sail">
+            </div>
+            <div class="text-content">
+                <h1>The Great Siege Begins!</h1>
+                <p>Suddenly, bells rang out from the church! <em>Ding! Dong! Ding! Dong!</em></p>
+                <p style="margin-top: 15px;">"Pirates!" cried Wally. "Thousands of them!"</p>
+                <p style="margin-top: 15px;">The horizon was filled with red sails. The Ottoman Empire had come to take
+                    their island.</p>
+                <p style="margin-top: 15px;">"To the walls!" shouted Wally. "For Malta! For Stella!"</p>
+                <p style="margin-top: 10px; font-size: 16px; color: #555;">(Tap the bomb to fire the cannons!)</p>
+            </div>
+            <div class="page-number">4</div>
+        </div>
+
+        <!-- PAGE 5 -->
+        <div class="page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="bottom: 50px; left: 20px; transform: rotate(-5deg);" onclick="foundRabbit(this)">
+            <div class="interactive-overlay" style="top: 100px; right: 60px; font-size: 50px;"
+                onclick="interactFood(this)" title="Eat Bread">🥖</div>
+            <div class="illustration">
+                <img src="assets/images/real_stella/kitchen.jpg" alt="Kitchen Shelter" class="click-wiggle"
+                    style="border: 5px solid #fff; opacity: 0.9;">
+            </div>
+            <div class="text-content">
+                <h1>Hungry Defenders</h1>
+                <p>The siege lasted for months. It was hot and scary.</p>
+                <p style="margin-top: 15px;">"I'm hungry," said Lola.</p>
+                <p style="margin-top: 15px;">"We must share," said Wally. He divided their last loaf of bread into four
+                    equal pieces.</p>
+                <p style="margin-top: 15px;"><em>"Non nobis tantum nati,"</em> he reminded them. Even in the darkest
+                    times, kindness was their strongest weapon.</p>
+            </div>
+            <div class="page-number">5</div>
+        </div>
+
+        <!-- PAGE 6 -->
+        <div class="page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="top: 30px; right: 30px; transform: rotate(90deg);" onclick="foundRabbit(this)">
+            <div class="illustration" onclick="animateElement(this, 'glow')">
+                <img src="assets/images/fortress.png" alt="Fortress Walls" class="anim-glow">
+            </div>
+            <div class="text-content">
+                <h1>Holding the Line</h1>
+                <p>The pirates attacked again and again. BOOM! CRASH!</p>
+                <p style="margin-top: 15px;">But the walls of Senglea held firm. Wally and his squires threw stones and
+                    boiling water (from the laundry) to drive them back.</p>
+                <p style="margin-top: 15px;">"They shall not pass!" roared Wally.</p>
+            </div>
+            <div class="page-number">6</div>
+        </div>
+
+        <!-- PAGE 7 -->
+        <div class="page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="bottom: 60px; right: 60px; transform: rotate(-10deg);" onclick="foundRabbit(this)">
+            <div class="illustration" onclick="animateElement(this, 'glow')">
+                <img src="assets/images/victory_feast.png" alt="Victory Feast" class="anim-glow click-glow"
+                    style="border: 5px solid #FFD700; border-radius: 10px; width: 80%;">
+            </div>
+            <div class="text-content">
+                <h1>Stella - The Star</h1>
+                <p>After months of fighting, the Great Siege was over! The Ottomans sailed away. Malta had won!</p>
+                <p style="margin-top: 15px;">Jean de la Valette raised his cup: <em>"To Wally Worner and his friends,
+                        the Guardians of Senglea!"</em></p>
+                <p style="margin-top: 15px;">As a reward for their bravery, the Grand Master gave Wally the keys to
+                    house number 38.</p>
+                <p style="margin-top: 15px;">Wally, Marco, Seraphine, and Lola held a big feast in the kitchen. They ate
+                    delicious rabbit stew (<em>stuffat tal-fenek</em>) and celebrated. The house of Stella was safe.</p>
+            </div>
+            <div class="page-number">7</div>
+        </div>
+
+        <!-- PAGE 8 -->
+        <div class="page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="top: 20px; left: 50%; transform: translateX(-50%);" onclick="foundRabbit(this)">
+            <div class="illustration">
+                <div class="illustration-group">
+                    <img src="assets/images/worner.png?v=2" alt="Knight Wally" class="page8-knight click-wiggle">
+                    <img src="assets/images/real_stella/bedroom.jpg" alt="Real Stella Bedroom"
+                        class="page8-house click-glow" style="border: 5px solid white; width: 60%; height: auto;">
+                </div>
+            </div>
+            <div class="text-content">
+                <h1>The Legacy</h1>
+                <p>Wally Worner grew old and happy in the house called Stella.</p>
+                <p style="margin-top: 15px;">He taught his children and grandchildren to always be brave and kind.</p>
+                <p style="margin-top: 15px;">And to this day, if you visit 38 Triq il-Kurcifiss in Senglea, you can
+                    still see the house that Wally defended.</p>
+                <p style="font-size: 16px; color: #555; text-align: center; margin-top: 10px;">(That's the real bedroom
+                    of Stella in the photo!)</p>
+            </div>
+            <div class="page-number">8</div>
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="controls">
+            <button id="prevBtn" onclick="previousPage()">← Previous</button>
+            <button id="mapBtn" class="icon-btn" onclick="toggleMap()">🗺️</button>
+            <button id="sndBtn" class="icon-btn" onclick="toggleSound()">🔊</button>
+            <button id="nextBtn" onclick="nextPage()">Next →</button>
+        </div>
+    </div>
+
+    <!-- Map Modal -->
+    <div class="map-modal" id="mapModal">
+        <div class="map-content" id="mapContent">
+            <div class="close-btn" onclick="toggleMap()">×</div>
+            <img src="assets/images/map_malta.png" class="map-base" alt="Map of Malta">
+
+            <!-- Markers -->
+            <div class="map-marker" style="top: 55%; left: 52%;" onclick="zoomMap('senglea')">
+                <div class="marker-icon">⭐</div>
+                <div class="marker-label">Stella House (Senglea)</div>
+            </div>
+
+            <div class="map-marker" style="top: 45%; left: 60%;" onclick="zoomMap('birgu')">
+                <div class="marker-icon">🏰</div>
+                <div class="marker-label">Fort St. Angelo</div>
+            </div>
+
+            <!-- Enemies -->
+            <div class="pirate-ship-icon" style="bottom: 20%; left: 10%;" title="Enemy Fleet">⚓</div>
+            <div class="pirate-ship-icon" style="bottom: 30%; left: 80%; animation-delay: 2s;" title="Enemy Fleet">⚓
+            </div>
+
+            <p style="margin-top: 10px; font-family: 'Chewy'; font-size: 20px;">Use the Map to explore the Siege!</p>
+        </div>
+    </div>
+
+    <!-- Victory Modal -->
+    <div class="victory-modal" id="victoryModal">
+        <div class="victory-content" id="victoryContent">
+            <div class="close-btn" style="top: -20px; right: -20px;" onclick="closeVictory()">×</div>
+            <h2>Rabbit Hero!</h2>
+            <img src="assets/images/rabbit.png" class="victory-rabbit" alt="Happy Rabbit">
+            <p style="font-size: 24px;">You found all hidden rabbits!</p>
+            <p>The Knights of Malta salute your keen eyes!</p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wally Worner and Fortress Malta</title>
+    <!-- Premium Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chewy&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body data-total-rabbits="9">
+    <audio id="snd-turn" src="https://assets.mixkit.co/active_storage/sfx/2045/2045-preview.mp3"></audio>
+    <audio id="snd-yay" src="https://assets.mixkit.co/active_storage/sfx/1114/1114-preview.mp3"></audio>
+    <audio id="snd-ocean" src="https://assets.mixkit.co/active_storage/sfx/1188/1188-preview.mp3" loop></audio>
+    <audio id="snd-sword" src="https://assets.mixkit.co/active_storage/sfx/1271/1271-preview.mp3"></audio>
+    <audio id="snd-cannon" src="https://assets.mixkit.co/active_storage/sfx/1703/1703-preview.mp3"></audio>
+    <audio id="snd-bells" src="https://assets.mixkit.co/active_storage/sfx/573/573-preview.mp3"></audio>
+    <audio id="snd-pop" src="https://assets.mixkit.co/active_storage/sfx/2578/2578-preview.mp3"></audio>
+    <audio id="snd-siren" src="https://assets.mixkit.co/active_storage/sfx/543/543-preview.mp3"></audio>
+    <audio id="snd-plane" src="https://assets.mixkit.co/active_storage/sfx/936/936-preview.mp3"></audio>
+
+    <div class="rabbit-counter-panel"
+        style="position: fixed; top: 10px; right: 20px; z-index: 151; background: #fff8e1; border: 2px solid #5d4037; border-radius: 20px; padding: 5px 15px; font-family: 'Chewy', cursive; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 5px rgba(0,0,0,0.2);">
+        <img src="assets/images/rabbit.png" alt="Rabbit" style="width: 40px;"> <span id="rabbit-count">0/9 Found</span>
+    </div>
+
+    <!-- Home Button -->
+    <div style="position: fixed; top: 20px; left: 20px; z-index: 150;">
+        <button onclick="window.location.href='index.html'"
+            style="padding: 10px; font-family: 'Chewy'; font-size: 20px; border-radius: 10px; background: #FFD700; border: 3px solid #5d4037; color: #5d4037; cursor: pointer; box-shadow: 0 4px 5px rgba(0,0,0,0.3);">
+            🏠 Home
+        </button>
+    </div>
+
+    <div class="game-tip" id="gameTip"
+        style="display: none; position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); background: #fff; padding: 15px 30px; border-radius: 50px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); z-index: 160; animation: bounce 2s infinite;">
+        <strong>Psst!</strong> Help Wally find the hidden rabbits on each page! 🐰
+    </div>
+
+    <div class="book-container">
+        <!-- COVER -->
+        <div class="page cover-page active">
+            <h1 class="cover-title" style="color: #1a237e; text-shadow: 3px 3px 0px rgba(255, 255, 255, 0.6);">Wally
+                Worner<br>and<br>Fortress Malta</h1>
+            <div class="cover-collage">
+                <img src="assets/images/spitfire.png" class="cover-bg-img"
+                    style="left: 10%; top: 20%; transform: rotate(-10deg); width: 150px; filter: grayscale(100%) sepia(0.5);">
+                <img src="assets/images/stella_interior.png" class="cover-bg-img"
+                    style="right: 15%; top: 30%; transform: rotate(10deg); width: 200px; border: 5px solid white; box-shadow: 0 5px 10px rgba(0,0,0,0.3);">
+                <img src="assets/images/young_wally.png" alt="Wally Worner Jr." class="cover-main-img"
+                    style="filter: sepia(0.3);">
+            </div>
+            <p class="cover-decoration" style="color: #1a237e;">A Story of 1940, Courage, and the George Cross</p>
+            <button class="start-btn" style="background: #1a237e; box-shadow: 0 6px 0 #0d47a1;"
+                onclick="nextPage()">Start Adventure</button>
+        </div>
+
+        <!-- PAGE 1: PROLOGUE -->
+        <div class="page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="bottom: 85px; left: 30px;"
+                onclick="foundRabbit(this)">
+            <div class="illustration">
+                <img src="assets/images/real_stella/staircase.jpg" alt="Attic Stairs" class="anim-glow"
+                    style="border: 5px solid #fff; width: 45%; float: left; margin-right: 10px;">
+                <img src="assets/images/young_wally.png" alt="Young Wally 1940" class="anim-glow"
+                    style="width: 45%; float: right;">
+            </div>
+            <div class="text-content">
+                <h1>Discovery in the Attic</h1>
+                <p>June 1940. Twelve-year-old Wally Worner climbed into the dusty attic of Stella at 38 Triq
+                    il-Kurcifiss.</p>
+                <p style="margin-top: 15px;">Hidden behind a chest, he found an ancient shield! Yellow with a red stripe
+                    and six red roses. The motto read: <em>"Non nobis tantum nati."</em></p>
+                <p style="margin-top: 15px;">"That belonged to Sir Wally Worner," his grandmother said. "He defended
+                    this house in 1565. It means 'We are not born for ourselves alone.'"</p>
+                <p style="margin-top: 15px;">Suddenly, a siren wailed. <em>"Wooooooo!"</em> The war had come to Malta.
+                </p>
+            </div>
+            <div class="page-number">1</div>
+        </div>
+
+        <!-- PAGE 2: CHAPTER 1 -->
+        <div class="page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="top: 20px; right: 30px;"
+                onclick="foundRabbit(this)">
+            <div class="illustration" onclick="animateElement(this, 'shake')">
+                <img src="assets/images/battle.png" alt="Air Raid" class="anim-float" style="filter: grayscale(0.2);">
+            </div>
+            <div class="text-content">
+                <h1>The First Bombs Fall</h1>
+                <p>Italian bombers appeared over Grand Harbour. Wally stood on the roof, watching three tiny biplanes
+                    rise to meet them.</p>
+                <p style="margin-top: 15px;">"Faith, Hope, and Charity," his father pointed. "Three old planes against
+                    the whole enemy air force!"</p>
+                <p style="margin-top: 15px;">The little Gladiators fought like angry wasps. Wally touched the image of
+                    the shield in his pocket. "If the first Wally defended Stella with a sword, I can defend it now."
+                </p>
+            </div>
+            <div class="page-number">2</div>
+        </div>
+
+        <!-- PAGE 3: CHAPTER 2 -->
+        <div class="page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="bottom: 120px; left: 40px;"
+                onclick="foundRabbit(this)">
+            <div class="illustration">
+                <img src="assets/images/real_stella/kitchen.jpg" alt="Kitchen Shelter" class="click-wiggle"
+                    style="border: 5px solid #fff; opacity: 0.9;">
+            </div>
+            <div class="text-content">
+                <h1>Life Under Siege</h1>
+                <p>Senglea carved deep shelters into the rock. There, Wally met Laurence Mizzi, a boy who looked scared
+                    and hungry.</p>
+                <p style="margin-top: 15px;">"I suffer more from hunger than bombs," Laurence whispered.</p>
+                <p style="margin-top: 15px;">Wally broke his last piece of bread in half. "Here. We share everything.
+                    That's what friends do."</p>
+                <p style="margin-top: 15px;">Grandmother made stew from their last rabbit. "This gave the first Wally
+                    strength," she said. "It will give us strength too."</p>
+            </div>
+            <div class="page-number">3</div>
+        </div>
+
+        <!-- PAGE 4: CHAPTER 3 -->
+        <div class="page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="top: 50px; left: 20px;"
+                onclick="foundRabbit(this)">
+            <div class="illustration">
+                <img src="assets/images/mary_ellul.png" alt="Mary Ellul" class="anim-glow"
+                    style="width: 50%; margin: 0 auto; display: block;">
+            </div>
+            <div class="text-content">
+                <h1>Heroes of Malta</h1>
+                <p>"Not all heroes carry guns," Grandmother told the children.</p>
+                <p style="margin-top: 15px;">She spoke of <strong>Mary Ellul</strong> ("Mary the Man"), the Air Raid
+                    Warden who lifted heavy beams to save neighbors. Of <strong>Mabel Strickland</strong>, who printed
+                    <em>The Times of Malta</em> every day despite the bombs.
+                </p>
+                <p style="margin-top: 15px;">"And <strong>Henrietta Chevalier</strong>," she whispered. "Hiding refugees
+                    in Rome right under the enemy's nose. They live our motto: Not born for ourselves alone."</p>
+            </div>
+            <div class="page-number">4</div>
+        </div>
+
+        <!-- PAGE 5: CHAPTER 4 -->
+        <div class="page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="bottom: 50px; right: 50px;"
+                onclick="foundRabbit(this)">
+            <div class="interactive-overlay" style="bottom: 60px; right: 40px; font-size: 60px;"
+                onclick="playSound('plane')" title="Spitfire Flyby!">✈️</div>
+            <div class="illustration" onclick="animateElement(this, 'sail')">
+                <img src="assets/images/spitfire.png" alt="Spitfire" class="anim-sail">
+            </div>
+            <div class="text-content">
+                <h1>The Falcon Arrives</h1>
+                <p>April 1942. A roar filled the sky! <strong>Spitfires!</strong></p>
+                <p style="margin-top: 15px;">They were led by <strong>Sir Keith Park</strong>, a tall New Zealander who
+                    commanded the defense. Pilots from Canada, Australia, and New Zealand flew to save Malta.</p>
+                <p style="margin-top: 15px;">Wally met a Canadian pilot named <strong>Buzz Beurling</strong>. "You spot
+                    'em, kid, I'll shoot 'em," Buzz grinned. The Falcon of Malta had arrived!</p>
+            </div>
+            <div class="page-number">5</div>
+        </div>
+
+        <!-- PAGE 6: CHAPTER 5 -->
+        <div class="page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="top: 30px; right: 40px;"
+                onclick="foundRabbit(this)">
+            <div class="illustration">
+                <img src="assets/images/salvo.png" alt="Salvo" class="anim-glow"
+                    style="width: 45%; float: left; margin-right: 10px;">
+                <img src="assets/images/real_stella/window_view.jpg" alt="Window" class="anim-battle"
+                    style="width: 45%; border: 5px solid white;">
+            </div>
+            <div class="text-content">
+                <h1>Stella Under Fire</h1>
+                <p><em>Boom!</em> A bomb landed on Triq il-Kurcifiss. Stella was hurt. Her windows were blown out.</p>
+                <p style="margin-top: 15px;">But neighbors came to help. <strong>Salvo</strong>, a master carpenter,
+                    arrived with his tools. "This house is special," he said.</p>
+                <p style="margin-top: 15px;">He crafted beautiful new timber frames. "This is my way of fighting," Salvo
+                    smiled. "By building." Wally realized that kindness was a weapon too.</p>
+            </div>
+            <div class="page-number">6</div>
+        </div>
+
+        <!-- PAGE 7: CHAPTER 6 & 7 -->
+        <div class="page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="bottom: 100px; left: 20px;"
+                onclick="foundRabbit(this)">
+            <div class="illustration" onclick="animateElement(this, 'sail')">
+                <img src="assets/images/ship.png" alt="SS Ohio" class="anim-sail" style="filter: sepia(0.6);">
+            </div>
+            <div class="text-content">
+                <h1>Operation Pedestal</h1>
+                <p>Malta was starving. But in August 1942, the broken tanker <strong>SS Ohio</strong> limped into Grand
+                    Harbour, carried by two destroyers. She brought fuel and survival.</p>
+                <p style="margin-top: 15px;">"We made it!" Laurence cheered.</p>
+                <p style="margin-top: 15px;">The tide turned. King George VI awarded the <strong>George Cross</strong>
+                    to the whole island. Wally pinned a paper cross to his shirt, proud to be Maltese.</p>
+            </div>
+            <div class="page-number">7</div>
+        </div>
+
+        <!-- PAGE 8: CHAPTER 8 -->
+        <div class="page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="top: 40px; right: 20px;"
+                onclick="foundRabbit(this)">
+            <div class="illustration">
+                <img src="assets/images/stella_interior.png" alt="Stella Interior" class="anim-glow">
+            </div>
+            <div class="text-content">
+                <h1>Stella Still Shines</h1>
+                <p>The war ended. Wally and his father repaired Stella's walls. Salvo returned to finish the beautiful
+                    woodwork.</p>
+                <p style="margin-top: 15px;">Grandmother hung the old shield back on the wall. "Two Wallys," she said.
+                    "Two sieges. One house."</p>
+                <p style="margin-top: 15px;">Wally looked at Laurence. "We did it. We defended Stella. Together."</p>
+            </div>
+            <div class="page-number">8</div>
+        </div>
+
+        <!-- PAGE 9: EPILOGUE -->
+        <div class="page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="bottom: 20px; left: 20px;"
+                onclick="foundRabbit(this)">
+            <div class="illustration">
+                <div class="illustration-group">
+                    <img src="assets/images/young_wally.png" alt="Young Wally" class="page8-knight click-wiggle">
+                    <img src="assets/images/real_stella/bedroom.jpg" alt="Real Bedroom" class="page8-house click-glow"
+                        style="border: 5px solid white; width: 60%; height: auto;">
+                </div>
+            </div>
+            <div class="text-content">
+                <h1>The Legacy Continues</h1>
+                <p>Years later, a young boy touched the smooth timber window frames at Stella.</p>
+                <p style="margin-top: 15px;">"Salvo made those," Old Wally told his grandson. "During the war."</p>
+                <p style="margin-top: 15px;">"Real heroism isn't just fighting," Old Wally said. "It's Mary saving
+                    neighbors. Mabel printing truth. Salvo building windows. It's living for others."</p>
+                <p style="margin-top: 15px;">Stella the Star still shines—because love is the strongest stone of all.
+                </p>
+                <p style="font-size: 16px; color: #555; text-align: center; margin-top: 10px;">(You can see the real
+                    bedroom of Stella!)</p>
+            </div>
+            <div class="page-number">9</div>
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="controls">
+            <button id="prevBtn" onclick="previousPage()">← Previous</button>
+            <button id="mapBtn" class="icon-btn" onclick="toggleMap()">🗺️</button>
+            <button id="sndBtn" class="icon-btn" onclick="toggleSound()">🔊</button>
+            <button id="nextBtn" onclick="nextPage()">Next →</button>
+        </div>
+    </div>
+
+    <!-- Map Modal -->
+    <div class="map-modal" id="mapModal">
+        <div class="map-content" id="mapContent">
+            <div class="close-btn" onclick="toggleMap()">×</div>
+            <img src="assets/images/map_malta.png" class="map-base" alt="Map of Malta">
+
+            <!-- Markers -->
+            <div class="map-marker" style="top: 55%; left: 52%;" onclick="zoomMap('senglea')">
+                <div class="marker-icon">⭐</div>
+                <div class="marker-label">Stella House (Senglea)</div>
+            </div>
+
+            <div class="map-marker" style="top: 45%; left: 60%;" onclick="zoomMap('birgu')">
+                <div class="marker-icon">🏰</div>
+                <div class="marker-label">Fort St. Angelo</div>
+            </div>
+
+            <!-- Enemies -->
+            <div class="pirate-ship-icon" style="bottom: 20%; left: 10%;" title="Enemy Fleet">⚓</div>
+            <div class="pirate-ship-icon" style="bottom: 30%; left: 80%; animation-delay: 2s;" title="Enemy Fleet">⚓
+            </div>
+
+            <p style="margin-top: 10px; font-family: 'Chewy'; font-size: 20px;">Use the Map to explore the Siege!</p>
+        </div>
+    </div>
+
+    <!-- Victory Modal -->
+    <div class="victory-modal" id="victoryModal">
+        <div class="victory-content" id="victoryContent">
+            <div class="close-btn" style="top: -20px; right: -20px;" onclick="closeVictory()">×</div>
+            <h2>Rabbit Hero!</h2>
+            <img src="assets/images/rabbit.png" class="victory-rabbit" alt="Happy Rabbit">
+            <p style="font-size: 24px;">You found all hidden rabbits!</p>
+            <p>The Knights of Malta salute your keen eyes!</p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
