@@ -792,9 +792,19 @@
     <audio id="snd-cannon" src="https://assets.mixkit.co/active_storage/sfx/1703/1703-preview.mp3"></audio>
     <audio id="snd-bells" src="https://assets.mixkit.co/active_storage/sfx/573/573-preview.mp3"></audio>
     <audio id="snd-pop" src="https://assets.mixkit.co/active_storage/sfx/2578/2578-preview.mp3"></audio>
+    <audio id="snd-siren" src="https://assets.mixkit.co/active_storage/sfx/543/543-preview.mp3"></audio>
+    <audio id="snd-plane" src="https://assets.mixkit.co/active_storage/sfx/936/936-preview.mp3"></audio>
 
     <div class="rabbit-counter-panel">
         <img src="assets/images/rabbit.png" alt="Rabbit"> <span id="rabbit-count">0/8 Found</span>
+    </div>
+
+    <div style="position: fixed; top: 20px; left: 20px; z-index: 150;">
+        <select id="bookSelect" onchange="changeBook(this.value)"
+            style="padding: 10px; font-family: 'Chewy'; font-size: 20px; border-radius: 10px; background: #FFD700; border: 3px solid #5d4037; color: #5d4037; cursor: pointer; box-shadow: 0 4px 5px rgba(0,0,0,0.3);">
+            <option value="book1">Book 1: Siege of Malta (1565)</option>
+            <option value="book2">Book 2: Fortress Malta (1940)</option>
+        </select>
     </div>
 
     <div class="game-tip" id="gameTip">
@@ -802,9 +812,8 @@
     </div>
 
     <div class="book-container">
-
-        <!-- Cover Page -->
-        <div class="page cover-page active">
+        <!-- BOOK 1 PAGES (Original) -->
+        <div class="page cover-page active book1-page">
             <h1 class="cover-title">Wally Worner<br>and the<br>Siege of Malta</h1>
 
             <div class="cover-collage">
@@ -823,8 +832,7 @@
             <button class="start-btn" onclick="nextPage()">Start Reading</button>
         </div>
 
-        <!-- Page 1: Title (NOW PAGE 1 of story) -->
-        <div class="page">
+        <div class="page book1-page">
             <img src="assets/images/rabbit.png" class="hidden-rabbit"
                 style="bottom: 85px; left: 30px; transform: rotate(10deg);" onclick="foundRabbit(this)">
             <div class="illustration" onclick="animateElement(this, 'wiggle')">
@@ -844,14 +852,13 @@
             <div class="page-number">1</div>
         </div>
 
-        <!-- Page 2: The Call -->
-        <div class="page">
+        <div class="page book1-page">
             <img src="assets/images/rabbit.png" class="hidden-rabbit"
                 style="top: 20px; right: 30px; transform: rotate(-5deg);" onclick="foundRabbit(this)">
             <div class="interactive-overlay" style="bottom: 50px; left: 40px;" onclick="interactFood(this)"
                 title="Maltese Bread">🍞</div>
-            <div class="interactive-overlay" style="bottom: 60px; left: 80px;" onclick="interactFood(this)"
-                title="Cheese">🧀</div>
+            <div class="interactive-overlay" style="bottom: 40px; right: 80px; font-size: 35px;"
+                onclick="interactFood(this)" title="Cheese">🧀</div>
 
             <div class="illustration" onclick="animateElement(this, 'wiggle')">
                 <img src="assets/images/castle.png" alt="Castle" class="anim-float click-wiggle">
@@ -859,22 +866,16 @@
             <div class="text-content">
                 <h1>The Call to Malta</h1>
                 <p>One spring morning, a messenger arrived at Wally Worner's castle with urgent news. The beautiful
-                    island
-                    of Malta was in terrible danger!</p>
-                <p style="margin-top: 15px;">The Ottoman Empire had sent hundreds of ships carrying thousands of
-                    soldiers to capture the island. Malta was defended by the Knights of St. John, led by the great
-                    Grand Master Jean de la Valette, but they were outnumbered ten to one.</p>
-                <p style="margin-top: 15px;">Wally looked at his coat of arms. He thought about his motto. Then he
-                    made his decision.</p>
-                <p style="margin-top: 15px;"><em>"I must go," Wally told his squire Thomas. "Others need protection, and
-                        that is what a Worner does. Quickly, pack the ftira bread and cheese, it will be a long
-                        journey!"</em></p>
+                    island of Malta was in danger! The Ottoman Empire was sailing there with a huge fleet of ships.</p>
+                <p style="margin-top: 15px;"><em>"Malta needs brave knights!"</em> the messenger cried.</p>
+                <p style="margin-top: 15px;">Wally looked at his shield. He looked at his motto. He knew what he had to
+                    do. He packed his favorite cheese, his rusty sword, and said goodbye to his castle.</p>
+                <p style="margin-top: 15px;"><em>"I am coming, Malta!"</em> he shouted.</p>
             </div>
             <div class="page-number">2</div>
         </div>
 
-        <!-- Page 3: The Voyage -->
-        <div class="page">
+        <div class="page book1-page">
             <img src="assets/images/rabbit.png" class="hidden-rabbit"
                 style="top: 130px; left: 40px; transform: rotate(5deg); opacity: 0.8;" onclick="foundRabbit(this)">
             <div class="illustration" onclick="animateElement(this, 'sail')">
@@ -883,20 +884,17 @@
             <div class="text-content">
                 <h1>The Journey Across the Sea</h1>
                 <p>The voyage across the Mediterranean Sea was Wally Worner's first great adventure. His ship battled
-                    terrible storms.</p>
-                <p style="margin-top: 15px;">The Mediterranean was dangerous—Ottoman warships AND Barbary pirates
-                    prowled these waters. Wally kept watch through the night, spotting mysterious sails on the horizon.
-                </p>
-                <p style="margin-top: 15px;">One night, Wally noticed something strange—the
-                    stars were arranged in a pattern he'd never seen before.</p>
-                <p style="margin-top: 15px;"><em>"Sometimes, a guardian must trust his heart as much as his sword,"</em>
-                    Wally replied with a smile.</p>
+                    stormy waves that splashed salty water everywhere!</p>
+                <p style="margin-top: 15px;"><em>"Whoosh! Crash!"</em> went the waves.</p>
+                <p style="margin-top: 15px;">They even saw pirates in the distance! But Wally stood tall at the front of
+                    the ship, looking for land. Finally, he saw golden walls shining in the sun. It was the Grand
+                    Harbour of Malta.</p>
+                <p style="margin-top: 15px;">The water was the bluest blue he had ever seen.</p>
             </div>
             <div class="page-number">3</div>
         </div>
 
-        <!-- Page 4: Meeting Valette -->
-        <div class="page">
+        <div class="page book1-page">
             <img src="assets/images/rabbit.png" class="hidden-rabbit" style="bottom: 120px; right: 30px;"
                 onclick="foundRabbit(this)">
             <div class="interactive-overlay" style="bottom: 60px; right: 100px; font-size: 30px;"
@@ -906,20 +904,19 @@
             </div>
             <div class="text-content">
                 <h1>Meeting Jean de la Valette</h1>
-                <p>When Wally arrived at Malta, the island was already under siege. He was brought before Jean de
-                    la Valette himself.</p>
-                <p style="margin-top: 15px;"><em>"Sir Wallace Worner, your motto—'Not born for ourselves alone.' We
-                        shall need
-                        men who believe such words. If Senglea falls, Malta falls."</em></p>
-                <p style="margin-top: 15px;"><em>"Then Senglea must not fall,"</em> Sir Wallace Worner said firmly.</p>
-                <p style="margin-top: 15px;">Jean de la Valette smiled. They shared a meal of spicy Maltese sausage and
-                    olives. Sir Wallace ate heartily, knowing strength would be needed for what was to come.</p>
+                <p>Wally landed in Birgu and met the Grand Master, Jean de la Valette. He was very serious and looked
+                    very strong.</p>
+                <p style="margin-top: 15px;">Jean de la Valette turned to Wally: <em>"Take command of the harbor
+                        post at Senglea. We must protect it at all costs!"</em></p>
+                <p style="margin-top: 15px;">Wally saluted. <em>"I will not let you down, sir!"</em></p>
+                <p style="margin-top: 15px;">He marched to Senglea, a peninsula surrounded by water. It felt like
+                    standing
+                    on the deck of a giant stone ship.</p>
             </div>
             <div class="page-number">4</div>
         </div>
 
-        <!-- Page 5: Senglea -->
-        <div class="page">
+        <div class="page book1-page">
             <img src="assets/images/rabbit.png" class="hidden-rabbit"
                 style="top: 20px; left: 20px; transform: rotate(15deg);" onclick="foundRabbit(this)">
             <div class="interactive-overlay" style="top: 80px; left: 40px;" onclick="interactFood(this)"
@@ -927,28 +924,29 @@
             <div class="illustration" onclick="animateElement(this, 'glow')">
                 <img src="assets/images/house_stella.png" alt="Stella House" class="anim-glow click-glow">
             </div>
+            <div class="interactive-overlay"
+                onclick="showRealPhoto('assets/images/real_stella/window_view.jpg', 'Looking out from Stella in Senglea!')"
+                style="position:absolute; bottom:20px; right:40px; font-size:30px; background:white; padding:5px; border-radius:50%; border:2px solid #5d4037;">
+                📸</div>
             <div class="text-content">
                 <h1>The House Called Stella</h1>
                 <p>That night, Wally Worner explored the streets of Senglea. He walked down Triq il-Kurcifiss—the Street
-                    of the Crucifix. One house caught his eye: number 38.</p>
-                <p style="margin-top: 15px;">An old Maltese woman smiled at Wally and offered him fresh ftira bread and
-                    gbejniet cheese. "This is what we eat here in Senglea," she said. "Protect us, Sir Knight, and I'll
-                    make you my famous stuffat tal-fenek—rabbit stew!"</p>
-                <p style="margin-top: 15px;">A little rabbit hopped past in the street, and everyone laughed. <em>"I
-                        will,"</em> Wally promised. <em>"This place will stand."</em>
-                </p>
+                    of the Crucifix. The houses were tall and made of golden stone.</p>
+                <p style="margin-top: 15px;">One house stood out. It was number 38. It felt special. It felt...
+                    warm.</p>
+                <p style="margin-top: 15px;"><em>"This house is like a star,"</em> Wally thought. <em>"I will call it
+                        Stella."</em></p>
+                <p style="margin-top: 15px;">He promised then and there to protect this house and all the families
+                    living in Senglea. He knew the big battle was coming soon.</p>
             </div>
             <div class="page-number">5</div>
         </div>
 
-        <!-- Page 6: The Battle -->
-        <div class="page">
+        <div class="page book1-page">
             <img src="assets/images/rabbit.png" class="hidden-rabbit"
                 style="bottom: 20px; left: 50%; transform: translateX(-50%);" onclick="foundRabbit(this)">
             <!-- Interactive Cannons -->
             <div class="interactive-overlay" style="bottom: 60px; left: 40px; font-size: 50px;"
-                onclick="fireCannon(this)" title="Fire Cannon!">💣</div>
-            <div class="interactive-overlay" style="bottom: 80px; right: 40px; font-size: 40px;"
                 onclick="fireCannon(this)" title="Fire Cannon!">💥</div>
 
             <div class="illustration" onclick="animateElement(this, 'shake')">
@@ -956,45 +954,42 @@
             </div>
             <div class="text-content">
                 <h1>The Great Battle for Senglea</h1>
-                <p>On August 7th, 1565, the Ottomans launched their greatest assault.</p>
-                <p style="margin-top: 15px;">Jean de la Valette turned to Wally Worner: <em>"Take command of the harbor
-                        defenses. I trust you."</em></p>
-                <p style="margin-top: 15px;">Wally had a brilliant idea. He positioned cannons in the houses along
-                    Triq il-Kurcifiss, especially number 38. From its windows, they could see the entire harbor
-                    approach! Between attacks, defenders shared honey rings to keep their energy high.</p>
-                <p style="margin-top: 15px;">All day the battle raged. By sunset, the Ottoman forces retreated. Senglea
-                    still stood!</p>
+                <p>Boom! Bang! The Ottoman ships attacked! The Great Siege had begun.</p>
+                <p style="margin-top: 15px;">Cannonballs flew through the air. Pirates tried to climb the walls! But
+                    Wally Worner was ready. He stood on the walls of Senglea, waving his yellow and red shield.</p>
+                <p style="margin-top: 15px;"><em>"For Malta! For Stella!"</em> he cheered.</p>
+                <p style="margin-top: 15px;">He helped the soldiers. He carried water to the thirsty. He was everywhere
+                    at once! The enemy saw his brave shield and got scared. <em>"Run away!"</em> they shouted.</p>
             </div>
             <div class="page-number">6</div>
         </div>
 
-        <!-- Page 7: The Gift -->
-        <div class="page">
+        <div class="page book1-page">
             <img src="assets/images/rabbit.png" class="hidden-rabbit" style="top: 30px; left: 50px;"
                 onclick="foundRabbit(this)">
             <div class="interactive-overlay" style="top: 120px; left: 60px; font-size: 45px;"
                 onclick="interactFood(this)" title="Rabbit Stew">🥘</div>
             <div class="illustration" onclick="animateElement(this, 'glow')">
-                <img src="assets/images/house_stella.png" alt="Stella House" class="anim-glow click-glow">
+                <img src="assets/images/real_stella/kitchen.jpg" alt="Stella Kitchen" class="anim-glow click-glow"
+                    style="border: 5px solid #FFD700; border-radius: 10px; width: 80%;">
             </div>
             <div class="text-content">
                 <h1>Stella - The Star</h1>
-                <p>That evening, people celebrated. The old woman brought Wally a steaming bowl of stuffat tal-fenek.
-                    "The best rabbit stew in all Malta!" she declared.</p>
+                <p>After months of fighting, the Great Siege was over! The Ottomans sailed away. Malta had won!</p>
                 <p style="margin-top: 15px;">Jean de la Valette raised his cup: <em>"To Wally Worner, the Guardian of
-                        Stella!"</em></p>
-                <p style="margin-top: 15px;">Then Valette looked at Sir Wallace seriously. <em>"I want you to have
-                        Stella—number 38 Triq il-Kurcifiss. It is yours,
-                        for you and your family, for all generations to come."</em></p>
-                <p style="margin-top: 15px;">Sir Wallace Worner accepted with tears in his eyes. <em>"The Star. I will
-                        ensure it
-                        shines for generations."</em></p>
+                        Senglea!"</em></p>
+                <p style="margin-top: 15px;">As a reward for his bravery, the Grand Master gave Wally the keys to house
+                    number 38.</p>
+                <p style="margin-top: 15px;">Wally held a big feast in the kitchen. They ate delicious rabbit stew
+                    (<em>stuffat tal-fenek</em>) and celebrated. The house of Stella was safe, thanks to
+                    Sir Wallace Worner's courage.</p>
+                <p style="font-size: 16px; color: #555; text-align: center; margin-top: 10px;">(This is the REAL kitchen
+                    of Stella in the picture!)</p>
             </div>
             <div class="page-number">7</div>
         </div>
 
-        <!-- Page 8: The Legacy -->
-        <div class="page">
+        <div class="page book1-page">
             <img src="assets/images/rabbit.png" class="hidden-rabbit" style="bottom: 20px; right: 20px;"
                 onclick="foundRabbit(this)">
             <div class="illustration">
@@ -1013,22 +1008,196 @@
                 <p style="margin-top: 15px;">Years passed, then decades, then centuries. Stella remained, passed down
                     through generations. Each generation added their stories, but never forgot the brave knight who
                     defended it.</p>
-                <p style="margin-top: 15px;">And today, Stella still stands—a reminder of Sir Wallace Worner's courage.
-                </p>
+                <p style="margin-top: 15px;">And the story doesn't end here... nearly 400 years later, another Wally
+                    Worner would live in this very same house...</p>
 
                 <div class="teaser-text">
-                    <p><strong>COMING SOON...</strong></p>
-                    <p>BOOK TWO: "Wally Worner's Grandson and the Siege of Malta 1940-1943"</p>
+                    <p><strong>NOW AVAILABLE!</strong></p>
+                    <p>Switch books to read:<br>"Wally Worner's Grandson and the Siege of Malta 1940-1943"</p>
                 </div>
             </div>
             <div class="page-number">8</div>
         </div>
 
+
+        <!-- BOOK 2 PAGES (WWII) -->
+        <div class="page cover-page book2-page">
+            <h1 class="cover-title" style="color: #1a237e; text-shadow: 3px 3px 0px rgba(255, 255, 255, 0.6);">Wally
+                Worner<br>and<br>Fortress Malta</h1>
+
+            <div class="cover-collage">
+                <img src="assets/images/ship.png" class="cover-bg-img"
+                    style="left: 10%; top: 20%; transform: rotate(-10deg); width: 150px; filter: grayscale(100%) sepa(0.5);">
+                <img src="assets/images/real_stella/rooftop.jpg" class="cover-bg-img"
+                    style="right: 15%; top: 30%; transform: rotate(10deg); width: 200px; border: 5px solid white; box-shadow: 0 5px 10px rgba(0,0,0,0.3);">
+
+                <!-- Placeholder for WWII Wally, re-using Knight for now but conceptually different -->
+                <img src="assets/images/worner.png?v=2" alt="Wally Worner Jr." class="cover-main-img"
+                    style="filter: sepia(0.3);">
+            </div>
+
+            <p class="cover-decoration" style="color: #1a237e;">A Story of 1940, Spitfires, and the George Cross</p>
+
+            <button class="start-btn" style="background: #1a237e; box-shadow: 0 6px 0 #0d47a1;"
+                onclick="nextPage()">Start Adventure</button>
+        </div>
+
+        <div class="page book2-page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="bottom: 85px; left: 30px; transform: rotate(10deg);" onclick="foundRabbit(this)">
+            <div class="illustration">
+                <img src="assets/images/real_stella/staircase.jpg" alt="Attic Stairs" class="anim-glow"
+                    style="border: 5px solid #fff; width: 80%;">
+            </div>
+            <div class="text-content">
+                <h1>Discovery in the Attic</h1>
+                <p>It was the year 1940. In the house called Stella at 38 Triq il-Kurcifiss, a young boy named Wally
+                    Worner Jr. was exploring the attic.</p>
+                <p style="margin-top: 15px;">It was dusty and full of old trunks. In the corner, hidden under a blanket,
+                    he found something amazing. A shield! It was yellow with a red stripe and six red roses.</p>
+                <p style="margin-top: 15px;"><em>"Non nobis tantum nati"</em> he read on the scroll. "Not born for
+                    ourselves alone."</p>
+                <p style="margin-top: 15px;">"That was your ancestor's," his Nanna said. "Sir Wally Worner. He defended
+                    this house 400 years ago. Now, it looks like trouble is coming to Malta again..."</p>
+            </div>
+            <div class="page-number">1</div>
+        </div>
+
+        <div class="page book2-page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="top: 20px; right: 30px;"
+                onclick="foundRabbit(this)">
+            <div class="illustration" onclick="animateElement(this, 'shake')">
+                <img src="assets/images/battle.png" alt="Air Raid" class="anim-float" style="filter: grayscale(0.5);">
+            </div>
+            <div class="text-content">
+                <h1>The Sky Turns Dark</h1>
+                <p>June 1940. The sirens wailed! <em>"Wooooooo!"</em></p>
+                <p style="margin-top: 15px;">Wally ran to the roof. He saw planes in the sky, but they weren't friendly.
+                    They were Italian bombers!</p>
+                <p style="margin-top: 15px;">But then, three tiny biplanes rose up to fight them. They were named
+                    <strong>Faith, Hope, and Charity</strong>.</p>
+                <p style="margin-top: 15px;">"Look at them go!" Wally cheered. "Only three planes against the whole
+                    enemy air force!" Just like Sir Wally long ago, the odds were impossible, but Malta stood firm.</p>
+            </div>
+            <div class="page-number">2</div>
+        </div>
+
+        <div class="page book2-page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="bottom: 120px; left: 40px;"
+                onclick="foundRabbit(this)">
+            <div class="illustration">
+                <!-- Using the real Kitchen photo for the Shelter/Food context -->
+                <img src="assets/images/real_stella/kitchen.jpg" alt="Kitchen Shelter" class="click-wiggle"
+                    style="border: 5px solid #fff; opacity: 0.9;">
+            </div>
+            <div class="text-content">
+                <h1>Life Underground</h1>
+                <p>Bombs began to fall every day. The Worner family had to move into the shelter—caves dug deep into the
+                    yellow limestone under Senglea.</p>
+                <p style="margin-top: 15px;">It was dark and crowded, but everyone helped each other. They shared what
+                    little food they had.</p>
+                <p style="margin-top: 15px;">"We have no meat," Nanna sighed. "But we have garlic, we have peas... I
+                    will make a special stew."</p>
+                <p style="margin-top: 15px;">Wally smiled. Even in the dark, the smell of Nanna's cooking made it feel
+                    like home. "We are safe here," he told his little sister. "The rock of Malta protects us."</p>
+            </div>
+            <div class="page-number">3</div>
+        </div>
+
+        <div class="page book2-page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="top: 30px; left: 20px;"
+                onclick="foundRabbit(this)">
+            <div class="interactive-overlay" style="bottom: 60px; right: 40px; font-size: 60px;"
+                onclick="playSound('plane')" title="Spitfire Flyby!">✈️</div>
+            <div class="illustration" onclick="animateElement(this, 'sail')">
+                <img src="assets/images/ship.png" alt="Spitfire Delivery" class="anim-sail" style="filter: sepia(0.5);">
+            </div>
+            <div class="text-content">
+                <h1>The Spitfires Arrive!</h1>
+                <p>April 1942. Things looked bad. But then, a roar filled the sky!</p>
+                <p style="margin-top: 15px;"><em>"VROOOOM!"</em></p>
+                <p style="margin-top: 15px;">"Look!" Wally shouted from the roof. "Spitfires!"</p>
+                <p style="margin-top: 15px;">Beautiful, sleek fighter planes were landing at Ta' Qali. They had flown
+                    off a giant aircraft carrier called the USS Wasp. Now Malta had a sting! The German Stuka bombers
+                    were in for a surprise.</p>
+            </div>
+            <div class="page-number">4</div>
+        </div>
+
+        <div class="page book2-page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="bottom: 50px; right: 50px;"
+                onclick="foundRabbit(this)">
+            <div class="illustration" onclick="animateElement(this, 'shake')">
+                <img src="assets/images/real_stella/window_view.jpg" alt="Window View" class="anim-battle"
+                    style="border: 5px solid white;">
+            </div>
+            <div class="text-content">
+                <h1>Stella Under Fire</h1>
+                <p>One terrible afternoon, a bomb whistled down. <em>"Eeeeeeeee-BOOM!"</em></p>
+                <p style="margin-top: 15px;">It landed right on Triq il-Kurcifiss! Dust and smoke filled the air. Wally
+                    coughed and covered his eyes.</p>
+                <p style="margin-top: 15px;">When the dust settled, he looked up. House number 38... was it gone?</p>
+                <p style="margin-top: 15px;">No! The walls were scarred, and the windows were broken, but <strong>Stella
+                        still stood</strong>. It was tough, just like the people of Senglea.</p>
+            </div>
+            <div class="page-number">5</div>
+        </div>
+
+        <div class="page book2-page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="top: 50px; right: 20px;"
+                onclick="foundRabbit(this)">
+            <div class="interactive-overlay" style="top: 100px; left: 40px; font-size: 50px;" onclick="playSound('yay')"
+                title="Cheer!">🎖️</div>
+            <div class="illustration">
+                <!-- Placeholder for George Cross/Ceremony -->
+                <img src="assets/images/fortress.png" alt="George Cross" class="anim-glow"
+                    style="filter: hue-rotate(180deg);">
+            </div>
+            <div class="text-content">
+                <h1>The George Cross</h1>
+                <p>King George VI in England heard about how brave the people of Malta were. He decided to do something
+                    no King had ever done before.</p>
+                <p style="margin-top: 15px;">He awarded the George Cross medal to <strong>the whole island</strong>!</p>
+                <p style="margin-top: 15px;">"To honour her brave people, I award the George Cross to the Island
+                    Fortress of Malta to bear witness to a heroism and devotion that will long be famous in history."
+                </p>
+                <p style="margin-top: 15px;">Wally pinned a paper cross to his shirt. He was proud to be Maltese.</p>
+            </div>
+            <div class="page-number">6</div>
+        </div>
+
+        <div class="page book2-page">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="bottom: 20px; left: 20px;"
+                onclick="foundRabbit(this)">
+            <div class="illustration">
+                <div class="illustration-group">
+                    <img src="assets/images/worner.png?v=2" alt="Wally Worner Jr" class="page8-knight click-wiggle"
+                        style="filter: sepia(0.4);">
+                    <img src="assets/images/real_stella/bedroom.jpg" alt="Stella Bedroom" class="page8-house click-glow"
+                        style="border: 5px solid white; width: 60%; height: auto;">
+                </div>
+            </div>
+            <div class="text-content">
+                <h1>Victory and Peace</h1>
+                <p>Finally, in November 1942, the siege was broken. Food ships arrived! The enemy planes stopped coming.
+                </p>
+                <p style="margin-top: 15px;">Wally stood in his bedroom at Stella. He looked at the old shield, and then
+                    out the window at the peaceful harbour.</p>
+                <p style="margin-top: 15px;">"Two sieges," he whispered. "Two Wallys. But one house."</p>
+                <p style="margin-top: 15px;">Stella had survived again. And the legend of the Worner family—the
+                    guardians of Senglea—would live on forever.</p>
+                <p style="font-size: 16px; color: #555; text-align: center; margin-top: 10px;">(You can see the real
+                    bedroom of Stella in the photo!)</p>
+            </div>
+            <div class="page-number">7</div>
+        </div>
+
+
         <div class="controls">
-            <button class="icon-btn" onclick="toggleMap()" title="View Map">🗺️</button>
-            <button id="prevBtn" onclick="previousPage()">← Back</button>
+            <button id="prevBtn" onclick="previousPage()">← Previous</button>
+            <button id="mapBtn" class="icon-btn" onclick="toggleMap()">🗺️</button>
+            <button id="sndBtn" class="icon-btn" onclick="toggleSound()">🔊</button>
             <button id="nextBtn" onclick="nextPage()">Next →</button>
-            <button class="icon-btn" onclick="toggleSound()" id="soundBtn" title="Toggle Sound">🔊</button>
         </div>
     </div>
 
@@ -1036,22 +1205,37 @@
     <div class="map-modal" id="mapModal">
         <div class="map-content" id="mapContent">
             <div class="close-btn" onclick="toggleMap()">×</div>
-            <img src="assets/images/map_malta.png" class="map-base" alt="Map of Malta 1565">
+            <img src="assets/images/map_malta.png" class="map-base" alt="Map of Malta">
 
-            <!-- Markers based on the image being centered -->
-            <div class="map-marker" style="top: 50%; left: 50%;" onclick="zoomMap('senglea')">
+            <!-- Markers -->
+            <div class="map-marker" style="top: 55%; left: 52%;" onclick="zoomMap('senglea')">
                 <div class="marker-icon">⭐</div>
-                <span class="marker-label">Senglea</span>
+                <div class="marker-label">Stella House (Senglea)</div>
             </div>
 
-            <div class="pirate-ship-icon" style="top: 20%; left: 20%;">🏴‍☠️</div>
-            <div class="pirate-ship-icon" style="bottom: 25%; right: 25%; animation-delay: 1s;">⛵</div>
-            <div class="pirate-ship-icon" style="top: 40%; right: 15%; animation-delay: 2s;">🏴‍☠️</div>
-
-            <div
-                style="position: absolute; bottom: 20px; left: 20px; color: white; font-family: 'Patrick Hand'; font-size: 20px; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 5px;">
-                Explore the Grand Harbour of 1565!
+            <div class="map-marker" style="top: 45%; left: 60%;" onclick="zoomMap('birgu')">
+                <div class="marker-icon">🏰</div>
+                <div class="marker-label">Fort St. Angelo</div>
             </div>
+
+            <div class="map-marker" style="top: 30%; left: 30%;" onclick="zoomMap('valletta')">
+                <div class="marker-icon">🏙️</div>
+                <div class="marker-label">Valletta</div>
+            </div>
+
+            <!-- Enemies -->
+            <div class="pirate-ship-icon" style="bottom: 20%; left: 10%;" title="Enemy Fleet">⚓</div>
+            <div class="pirate-ship-icon" style="bottom: 30%; left: 80%; animation-delay: 2s;" title="Enemy Fleet">⚓
+            </div>
+        </div>
+    </div>
+
+    <div class="map-modal" id="photoModal" onclick="closePhoto()">
+        <div class="victory-content" style="max-width: 80vh; width: auto; background: #fff; padding: 20px;">
+            <div class="close-btn" style="top: -20px; right: -20px;" onclick="closePhoto()">×</div>
+            <h2 id="photoCaption" style="font-size: 30px; margin-bottom: 10px;">Real Life Stella</h2>
+            <img id="realPhotoImg" src=""
+                style="max-width: 100%; max-height: 60vh; border-radius: 10px; border: 5px solid #5d4037;">
         </div>
     </div>
 
@@ -1067,102 +1251,131 @@
     </div>
 
     <script>
+        let currentBook = 'book1';
         let currentPage = 0;
-        const pages = document.querySelectorAll('.page');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const victoryModal = document.getElementById('victoryModal');
+        let totalPages = 0;
         let soundEnabled = true;
         let rabbitCount = 0;
+        const totalRabbits = 8;
 
-        // Sound Effects
-        function toggleSound() {
-            soundEnabled = !soundEnabled;
-            const btn = document.getElementById('soundBtn');
-            btn.textContent = soundEnabled ? '🔊' : '🔇';
+        // Sound Elements
+        const sounds = {
+            turn: document.getElementById('snd-turn'),
+            yay: document.getElementById('snd-yay'),
+            ocean: document.getElementById('snd-ocean'),
+            sword: document.getElementById('snd-sword'),
+            cannon: document.getElementById('snd-cannon'),
+            bells: document.getElementById('snd-bells'),
+            pop: document.getElementById('snd-pop'),
+            siren: document.getElementById('snd-siren'),
+            plane: document.getElementById('snd-plane')
+        };
 
-            // Stop loop sounds if muted
-            if (!soundEnabled) {
-                document.getElementById('snd-ocean').pause();
-            }
+        function init() {
+            // Initial setup
+            changeBook('book1');
+
+            // Show tip after a few seconds
+            setTimeout(() => {
+                document.getElementById('gameTip').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('gameTip').style.display = 'none';
+                }, 5000);
+            }, 2000);
         }
 
-        function playSound(type) {
-            if (!soundEnabled) return;
+        function changeBook(bookName) {
+            currentBook = bookName;
+            currentPage = 0;
 
-            const soundMap = {
-                'turn': 'snd-turn',
-                'yay': 'snd-yay',
-                'ocean': 'snd-ocean',
-                'sword': 'snd-sword',
-                'cannon': 'snd-cannon',
-                'bells': 'snd-bells',
-                'pop': 'snd-pop'
-            };
+            // Hide all pages first
+            const allPages = document.querySelectorAll('.page');
+            allPages.forEach(p => p.classList.remove('active', 'book1-page', 'book2-page')); // Clean slate logic? No, we filter by class.
 
-            const audioId = soundMap[type];
-            if (audioId) {
-                const audio = document.getElementById(audioId);
-                if (audio) {
-                    if (audioId !== 'snd-ocean') audio.currentTime = 0;
-                    audio.play().catch(e => console.log("Audio prevent default"));
-                }
-            }
+            // Re-query only relevant pages
+            const bookPages = document.querySelectorAll('.' + currentBook + '-page');
+            totalPages = bookPages.length;
+
+            updateDisplay();
         }
 
-        function stopSound(type) {
-            const soundMap = { 'ocean': 'snd-ocean' };
-            const audioId = soundMap[type];
-            if (audioId) {
-                const audio = document.getElementById(audioId);
-                audio.pause();
-                audio.currentTime = 0;
-            }
-        }
+        function updateDisplay() {
+            const allPages = document.querySelectorAll('.page');
+            allPages.forEach(p => p.style.display = 'none'); // Hard hide everything
+            allPages.forEach(p => p.classList.remove('active'));
 
-        function showPage(index) {
-            playSound('turn');
+            const bookPages = document.querySelectorAll('.' + currentBook + '-page');
 
-            // Page specific sounds
-            stopSound('ocean');
-
-            // Note: Index is shifted by 1 now because of cover page
-            // Page 3 (Voyage) is now index 3 (0=Cover, 1=Page1, 2=Page2, 3=Page3)
-            if (index === 3) {
-                const ocean = document.getElementById('snd-ocean');
-                if (soundEnabled) ocean.play().catch(e => console.log(e));
-            }
-            // Page 7 (Victory) is now index 7
-            if (index === 7) {
-                playSound('bells');
+            if (bookPages[currentPage]) {
+                bookPages[currentPage].style.display = 'flex'; // Restore flex
+                // Trigger reflow for animation?
+                setTimeout(() => bookPages[currentPage].classList.add('active'), 10);
             }
 
-
-            pages.forEach((page, i) => {
-                page.classList.remove('active');
-                if (i === index) {
-                    page.classList.add('active');
-                }
-            });
-
-            if (prevBtn && nextBtn) {
-                prevBtn.style.visibility = index === 0 ? 'hidden' : 'visible';
-                nextBtn.style.visibility = index === pages.length - 1 ? 'hidden' : 'visible';
-            }
+            document.getElementById('prevBtn').disabled = currentPage === 0;
+            document.getElementById('nextBtn').innerText = currentPage === totalPages - 1 ? 'Finish' : 'Next →';
         }
 
         function nextPage() {
-            if (currentPage < pages.length - 1) {
+            if (currentPage < totalPages - 1) {
                 currentPage++;
-                showPage(currentPage);
+                playSound('turn');
+                updateDisplay();
             }
         }
 
         function previousPage() {
             if (currentPage > 0) {
                 currentPage--;
-                showPage(currentPage);
+                playSound('turn');
+                updateDisplay();
             }
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            document.getElementById('sndBtn').innerText = soundEnabled ? '🔊' : '🔇';
+            if (soundEnabled) {
+                if (currentPage === 0) tryPlayOcean();
+            } else {
+                sounds.ocean.pause();
+            }
+        }
+
+        function playSound(name) {
+            if (!soundEnabled) return;
+            if (sounds[name]) {
+                sounds[name].currentTime = 0;
+                sounds[name].play().catch(e => console.log("Audio play failed", e));
+            }
+        }
+
+        function tryPlayOcean() {
+            // Only play ocean on title pages or ship pages
+            sounds.ocean.volume = 0.3;
+            sounds.ocean.play().catch(e => console.log("Autoplay blocked"));
+        }
+
+        // Rabbit Game
+        function foundRabbit(element) {
+            if (element.classList.contains('found')) return;
+
+            element.classList.add('found');
+            rabbitCount++;
+            document.getElementById('rabbit-count').innerText = rabbitCount + "/" + totalRabbits + " Found";
+            playSound('pop');
+
+            if (rabbitCount === totalRabbits) {
+                setTimeout(() => {
+                    document.getElementById('victoryModal').style.display = 'flex';
+                    playSound('yay');
+                    playSound('bells');
+                }, 500);
+            }
+        }
+
+        function closeVictory() {
+            document.getElementById('victoryModal').style.display = 'none';
         }
 
         // Map
@@ -1172,83 +1385,49 @@
         }
 
         function zoomMap(location) {
-            if (location === 'senglea') {
-                alert("This is Senglea! The home of Stella and the heart of the defense!");
-            }
+            alert("This place was vital during the " + (currentBook === 'book1' ? "Great Siege!" : "Second Siege!"));
         }
 
-        function closeVictory() {
-            victoryModal.style.display = 'none';
-        }
-
-        // Animations
-        function animateElement(element, type) {
-            // Remove class to reset
-            element.classList.remove(type);
-
-            // Add 'clicked' class to trigger one-off animation
-            element.classList.add('clicked');
-            setTimeout(() => {
-                element.classList.remove('clicked');
-            }, 1000);
-
-            // Battle page click on main image triggers sword sound
-            if (type === 'shake') {
-                playSound('sword');
-            }
-        }
-
-        // Interactive Items (Cannons, Food)
-        function fireCannon(element) {
-            playSound('cannon');
-            element.classList.add('popped');
-            setTimeout(() => { element.classList.remove('popped'); }, 500);
-
-            // Shake the page a bit!
-            const page = element.closest('.page');
-            page.style.transform = 'translate(5px, 0)';
-            setTimeout(() => { page.style.transform = 'translate(-5px, 0)'; }, 50);
-            setTimeout(() => { page.style.transform = 'none'; }, 100);
+        // Interaction
+        function animateElement(element, animationClass) {
+            // Remove class to reset if needed
+            element.classList.remove(animationClass);
+            void element.offsetWidth; // trigger reflow
+            element.classList.add(animationClass);
         }
 
         function interactFood(element) {
-            playSound('pop');
-            element.classList.add('popped');
-            setTimeout(() => { element.classList.remove('popped'); }, 500);
-        }
+            function foundRabbit(element) {
+                if (element.classList.contains('found')) return;
 
-        // Rabbit Game
-        function foundRabbit(element) {
-            if (element.classList.contains('found')) return;
+                element.classList.add('found');
+                rabbitCount++;
+                document.getElementById('rabbit-count').textContent = rabbitCount + "/8 Found";
+                playSound('yay');
 
-            element.classList.add('found');
-            rabbitCount++;
-            document.getElementById('rabbit-count').textContent = rabbitCount + "/8 Found";
-            playSound('yay');
-
-            if (rabbitCount === 8) {
-                setTimeout(() => {
-                    victoryModal.style.display = 'flex';
-                    playSound('yay');
-                }, 1000);
+                if (rabbitCount === 8) {
+                    setTimeout(() => {
+                        victoryModal.style.display = 'flex';
+                        playSound('yay');
+                    }, 1000);
+                }
             }
-        }
 
-        // Game Tips
-        setTimeout(() => {
-            const tip = document.getElementById('gameTip');
-            tip.style.display = 'block';
-            setTimeout(() => { tip.style.display = 'none'; }, 5000);
-        }, 2000);
+            // Game Tips
+            setTimeout(() => {
+                const tip = document.getElementById('gameTip');
+                tip.style.display = 'block';
+                setTimeout(() => { tip.style.display = 'none'; }, 5000);
+            }, 2000);
 
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') nextPage();
-            if (e.key === 'ArrowLeft') previousPage();
-        });
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') nextPage();
+                if (e.key === 'ArrowLeft') previousPage();
+            });
 
-        // Initialize
-        showPage(0);
+            // Initialize
+            showPage(0);
     </script>
 </body>
 
