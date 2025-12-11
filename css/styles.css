@@ -613,11 +613,13 @@ button:disabled {
     }
 
     .cover-collage {
-        height: 300px;
+        height: auto;
+        max-height: 250px;
+        margin: 10px 0;
     }
 
     .cover-main-img {
-        height: 200px;
+        max-height: 180px;
     }
 
     .controls {

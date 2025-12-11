@@ -67,6 +67,12 @@ function updateDisplay() {
         setTimeout(() => pages[currentPage].classList.add('active'), 10);
     }
 
+    // Hide controls on cover page, show on others
+    const controls = document.querySelector('.controls');
+    if (controls) {
+        controls.style.display = currentPage === 0 ? 'none' : 'flex';
+    }
+
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
 
