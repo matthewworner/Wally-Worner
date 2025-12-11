@@ -1075,7 +1075,8 @@
                 <p style="margin-top: 15px;">Wally ran to the roof. He saw planes in the sky, but they weren't friendly.
                     They were Italian bombers!</p>
                 <p style="margin-top: 15px;">But then, three tiny biplanes rose up to fight them. They were named
-                    <strong>Faith, Hope, and Charity</strong>.</p>
+                    <strong>Faith, Hope, and Charity</strong>.
+                </p>
                 <p style="margin-top: 15px;">"Look at them go!" Wally cheered. "Only three planes against the whole
                     enemy air force!" Just like Sir Wally long ago, the odds were impossible, but Malta stood firm.</p>
             </div>
@@ -1272,27 +1273,15 @@
         };
 
         function init() {
-            // Initial setup
+            // Initial setup using URL param if exists, else book1
             changeBook('book1');
-
-            // Show tip after a few seconds
-            setTimeout(() => {
-                document.getElementById('gameTip').style.display = 'block';
-                setTimeout(() => {
-                    document.getElementById('gameTip').style.display = 'none';
-                }, 5000);
-            }, 2000);
         }
 
         function changeBook(bookName) {
             currentBook = bookName;
             currentPage = 0;
 
-            // Hide all pages first
-            const allPages = document.querySelectorAll('.page');
-            allPages.forEach(p => p.classList.remove('active', 'book1-page', 'book2-page')); // Clean slate logic? No, we filter by class.
-
-            // Re-query only relevant pages
+            // Re-query only relevant pages to determine count
             const bookPages = document.querySelectorAll('.' + currentBook + '-page');
             totalPages = bookPages.length;
 
@@ -1301,14 +1290,14 @@
 
         function updateDisplay() {
             const allPages = document.querySelectorAll('.page');
-            allPages.forEach(p => p.style.display = 'none'); // Hard hide everything
+            allPages.forEach(p => p.style.display = 'none');
             allPages.forEach(p => p.classList.remove('active'));
 
             const bookPages = document.querySelectorAll('.' + currentBook + '-page');
 
             if (bookPages[currentPage]) {
-                bookPages[currentPage].style.display = 'flex'; // Restore flex
-                // Trigger reflow for animation?
+                bookPages[currentPage].style.display = 'flex';
+                // Trigger reflow for animation
                 setTimeout(() => bookPages[currentPage].classList.add('active'), 10);
             }
 
@@ -1346,14 +1335,13 @@
             if (!soundEnabled) return;
             if (sounds[name]) {
                 sounds[name].currentTime = 0;
-                sounds[name].play().catch(e => console.log("Audio play failed", e));
+                sounds[name].play().catch(e => console.log("Audio play failed / user interaction needed"));
             }
         }
 
         function tryPlayOcean() {
-            // Only play ocean on title pages or ship pages
             sounds.ocean.volume = 0.3;
-            sounds.ocean.play().catch(e => console.log("Autoplay blocked"));
+            sounds.ocean.play().catch(e => { });
         }
 
         // Rabbit Game
@@ -1385,49 +1373,60 @@
         }
 
         function zoomMap(location) {
-            alert("This place was vital during the " + (currentBook === 'book1' ? "Great Siege!" : "Second Siege!"));
+            alert("This place was vital during the " + (currentBook === 'book1' ? "Great Siege of 1565!" : "Second Siege of 1940!"));
+        }
+
+        function showRealPhoto(src, caption) {
+            const modal = document.getElementById('photoModal');
+            document.getElementById('realPhotoImg').src = src;
+            document.getElementById('photoCaption').innerText = caption;
+            modal.style.display = 'flex';
+        }
+
+        function closePhoto() {
+            document.getElementById('photoModal').style.display = 'none';
         }
 
         // Interaction
         function animateElement(element, animationClass) {
-            // Remove class to reset if needed
             element.classList.remove(animationClass);
             void element.offsetWidth; // trigger reflow
             element.classList.add(animationClass);
         }
 
         function interactFood(element) {
-            function foundRabbit(element) {
-                if (element.classList.contains('found')) return;
-
-                element.classList.add('found');
-                rabbitCount++;
-                document.getElementById('rabbit-count').textContent = rabbitCount + "/8 Found";
-                playSound('yay');
-
-                if (rabbitCount === 8) {
-                    setTimeout(() => {
-                        victoryModal.style.display = 'flex';
-                        playSound('yay');
-                    }, 1000);
-                }
-            }
-
-            // Game Tips
+            animateElement(element, 'popped');
+            playSound('pop');
             setTimeout(() => {
-                const tip = document.getElementById('gameTip');
-                tip.style.display = 'block';
-                setTimeout(() => { tip.style.display = 'none'; }, 5000);
-            }, 2000);
+                element.style.opacity = '0';
+                element.style.pointerEvents = 'none';
+            }, 200);
+        }
 
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowRight') nextPage();
-                if (e.key === 'ArrowLeft') previousPage();
-            });
+        function fireCannon(element) {
+            animateElement(element, 'popped');
+            playSound('cannon');
+            // Shake the screen
+            document.body.style.animation = "shake 0.5s";
+            setTimeout(() => document.body.style.animation = "", 500);
+        }
 
-            // Initialize
-            showPage(0);
+        // Keyboard support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextPage();
+            if (e.key === 'ArrowLeft') previousPage();
+        });
+
+        // Start
+        init();
+
+        // Show game tip
+        setTimeout(() => {
+            document.getElementById('gameTip').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('gameTip').style.display = 'none';
+            }, 5000);
+        }, 1000);
     </script>
 </body>
 
