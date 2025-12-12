@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+
 /* ============================================
    SENGLEA REGATTA COLORS - Red & Yellow Theme
    ============================================ */
@@ -16,6 +18,10 @@
     /* Vintage paper tones */
     --vintage-cream: #faf6ed;
     --vintage-aged: #f5f0e3;
+
+    /* Fonts */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Gentium Book Plus', serif;
 }
 
 * {
@@ -28,7 +34,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #fdf6e3;
-    font-family: 'Gentium Book Plus', serif;
+    font-family: var(--font-body);
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -155,27 +161,40 @@ body {
 
 /* Typography - Senglea Red & Yellow */
 h1 {
-    font-family: 'Chewy', cursive;
+    font-family: var(--font-heading);
     color: var(--senglea-dark-red);
-    font-size: 48px;
-    margin-bottom: 20px;
+    /* Regatta Red */
+    margin-bottom: 25px;
     text-align: center;
-    text-shadow: 2px 2px 0px rgba(255, 213, 79, 0.4);
-    line-height: 1.2;
+    font-size: 32px;
+    font-weight: 900;
+    /* Extra Bold for Golden Book look */
+    letter-spacing: -0.5px;
     padding-bottom: 10px;
-    /* Red & yellow double underline - Regatta style! */
-    border-bottom: 3px solid var(--senglea-red);
-    box-shadow: 0 3px 0 var(--senglea-yellow);
+    border-bottom: 2px solid var(--senglea-yellow);
+    /* Yellow underline */
+    text-shadow: 1px 1px 0px rgba(255, 236, 179, 0.5);
 }
 
 p {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1.6;
     margin-bottom: 20px;
     text-align: left;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    color: #3e2723;
+}
+
+/* Drop Cap for first paragraph - Classic Book Style */
+.text-content p:first-of-type::first-letter {
+    float: left;
+    font-size: 3.5em;
+    line-height: 0.8;
+    padding-right: 8px;
+    padding-top: 4px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--senglea-red);
+    text-shadow: 2px 2px 0px var(--senglea-light-yellow);
 }
 
 strong {
@@ -437,7 +456,7 @@ em {
 
 button {
     padding: 15px 40px;
-    font-family: 'Chewy', cursive;
+    font-family: var(--font-heading);
     font-size: 28px;
     color: white;
     /* Red & Yellow gradient button - Regatta colors */
@@ -1137,7 +1156,7 @@ button:disabled {
     border: 3px solid var(--senglea-red);
     border-radius: 25px;
     padding: 8px 18px;
-    font-family: 'Chewy', cursive;
+    font-family: var(--font-heading);
     display: flex;
     align-items: center;
     gap: 12px;
@@ -1173,7 +1192,7 @@ button:disabled {
 .home-button-wrapper button,
 .home-btn {
     padding: 12px 20px;
-    font-family: 'Chewy', cursive;
+    font-family: var(--font-heading);
     font-size: 20px;
     border-radius: 20px;
     background: linear-gradient(135deg,

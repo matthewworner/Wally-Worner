@@ -7,7 +7,7 @@
     <title>Young Wally and Fortress Malta</title>
     <!-- Premium Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Chewy&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -20,15 +20,13 @@
     <audio id="snd-cannon" src="https://assets.mixkit.co/active_storage/sfx/1703/1703-preview.mp3"></audio>
     <audio id="snd-bells" src="https://assets.mixkit.co/active_storage/sfx/573/573-preview.mp3"></audio>
 
-    <div class="rabbit-counter-panel"
-        style="position: fixed; top: 10px; right: 20px; z-index: 151; background: #fff8e1; border: 2px solid #5d4037; border-radius: 20px; padding: 5px 15px; font-family: 'Chewy', cursive; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 5px rgba(0,0,0,0.2);">
-        <img src="assets/images/rabbit.png" alt="Rabbit" style="width: 40px;"> <span id="rabbit-count">0/8 Found</span>
+    <div class="rabbit-counter-panel">
+        <img src="assets/images/rabbit.png" alt="Rabbit"> <span id="rabbit-count">0/8 Found</span>
     </div>
 
     <!-- Home Button -->
-    <div style="position: fixed; top: 20px; left: 20px; z-index: 150;">
-        <button onclick="window.location.href='index.html'"
-            style="padding: 10px; font-family: 'Chewy'; font-size: 20px; border-radius: 10px; background: #FFD700; border: 3px solid #5d4037; color: #5d4037; cursor: pointer; box-shadow: 0 4px 5px rgba(0,0,0,0.3);">
+    <div class="home-button-wrapper">
+        <button onclick="window.location.href='index.html'" class="home-btn">
             🏠 Home
         </button>
     </div>
@@ -49,10 +47,11 @@
             </div>
 
             <p class="cover-decoration">The Second Siege • 375 Years Later</p>
-            <p style="font-family: 'Chewy'; font-size: 18px; margin-top: 10px;">Malta, 1940-1943</p>
+            <p style="font-family: 'Playfair Display', serif; font-size: 28px; margin-top: 10px; font-weight: 700;">
+                Malta, 1940-1943</p>
 
             <button class="start-btn" onclick="nextPage()">Start Reading</button>
-            <img src="assets/images/rabbit.png" alt="Rabbit" class="anim-float" style="width: 80px; margin-top: 20px;">
+            <img src="assets/images/rabbit.png" alt="Rabbit" class="anim-float" style="width: 80px; margin-top: 35px;">
         </div>
 
         <!-- PAGE 1: THE ATTIC DISCOVERY -->
@@ -215,7 +214,8 @@
             <div class="illustration" onclick="animateElement(this, 'glow')">
                 <div
                     style="text-align: center; padding: 30px; background: rgba(255,255,255,0.95); border-radius: 15px; border: 5px solid #8b0000;">
-                    <h2 style="font-family: 'Chewy'; font-size: 28px; color: #8b0000;">🇳🇿 The Kiwi Commander 🇳🇿</h2>
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #8b0000;">🇳🇿 The Kiwi
+                        Commander 🇳🇿</h2>
                     <p style="font-size: 20px; margin-top: 15px; line-height: 1.8;">
                         <strong>Air Chief Marshal<br>Sir Keith Park</strong><br>
                         <em>From New Zealand</em><br><br>
@@ -317,7 +317,8 @@
                     Same house. Same values. Same unbreakable spirit."</p>
                 <p style="margin-top: 15px;"><strong>And today, Stella still stands at 38 Triq il-Kurcifiss—a star that
                         never stopped shining!</strong></p>
-                <p style="text-align: center; margin-top: 15px; font-family: 'Chewy'; font-size: 18px; color: #8b0000;">
+                <p
+                    style="text-align: center; margin-top: 15px; font-family: 'Playfair Display', serif; font-size: 18px; color: #8b0000;">
                     The End</p>
             </div>
             <div class="page-number">8</div>
@@ -359,7 +360,8 @@
                 style="position: absolute; top: 30%; right: 20%; font-size: 40px; animation: fly 3s ease-in-out infinite;">
                 ✈️</div>
 
-            <p style="margin-top: 10px; font-family: 'Chewy'; font-size: 20px;">Explore WWII Malta!</p>
+            <p style="margin-top: 10px; font-family: 'Playfair Display', serif; font-size: 20px;">Explore WWII Malta!
+            </p>
         </div>
     </div>
 
@@ -371,7 +373,8 @@
             <img src="assets/images/rabbit.png" class="victory-rabbit" alt="Victory Rabbit">
             <p style="font-size: 24px;">You found all 8 rabbits in wartime Malta!</p>
             <p>Just like Wally, Marco, Seraphine, Lola, and Laurence—you never gave up!</p>
-            <p style="margin-top: 15px; font-family: 'Chewy'; color: #8b0000;">🏆 <em>Non nobis tantum nati</em> 🏆</p>
+            <p style="margin-top: 15px; font-family: 'Playfair Display', serif; color: #8b0000;">🏆 <em>Non nobis tantum
+                    nati</em> 🏆</p>
         </div>
     </div>
 

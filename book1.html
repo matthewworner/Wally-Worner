@@ -7,7 +7,7 @@
     <title>Wally Worner and the Siege of Malta</title>
     <!-- Premium Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Chewy&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -21,15 +21,13 @@
     <audio id="snd-bells" src="https://assets.mixkit.co/active_storage/sfx/573/573-preview.mp3"></audio>
     <audio id="snd-pop" src="https://assets.mixkit.co/active_storage/sfx/2578/2578-preview.mp3"></audio>
 
-    <div class="rabbit-counter-panel"
-        style="position: fixed; top: 10px; right: 20px; z-index: 151; background: #fff8e1; border: 2px solid #5d4037; border-radius: 20px; padding: 5px 15px; font-family: 'Chewy', cursive; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 5px rgba(0,0,0,0.2);">
-        <img src="assets/images/rabbit.png" alt="Rabbit" style="width: 40px;"> <span id="rabbit-count">0/8 Found</span>
+    <div class="rabbit-counter-panel">
+        <img src="assets/images/rabbit.png" alt="Rabbit"> <span id="rabbit-count">0/8 Found</span>
     </div>
 
     <!-- Home Button -->
-    <div style="position: fixed; top: 20px; left: 20px; z-index: 150;">
-        <button onclick="window.location.href='index.html'"
-            style="padding: 10px; font-family: 'Chewy'; font-size: 20px; border-radius: 10px; background: #FFD700; border: 3px solid #5d4037; color: #5d4037; cursor: pointer; box-shadow: 0 4px 5px rgba(0,0,0,0.3);">
+    <div class="home-button-wrapper">
+        <button onclick="window.location.href='index.html'" class="home-btn">
             🏠 Home
         </button>
     </div>
@@ -53,7 +51,7 @@
             </div>
 
             <p class="cover-decoration">A Tale of Courage, Honor, and Adventure</p>
-            <p style="font-family: 'Chewy'; font-size: 18px; margin-top: 10px;">Malta, 1565</p>
+            <p style="font-family: 'Playfair Display', serif; font-size: 18px; margin-top: 10px;">Malta, 1565</p>
 
             <button class="start-btn" onclick="nextPage()">Start Reading</button>
             <img src="assets/images/rabbit.png" alt="Rabbit" class="anim-float" style="width: 80px; margin-top: 20px;">
@@ -69,12 +67,17 @@
             <div class="text-content">
                 <h1>Meet Wally Worner</h1>
                 <p><strong>The Year: 1565</strong></p>
-                <p style="margin-top: 20px;">Long ago, there lived a brave knight named <strong>Sir Wallace "Wally" Worner</strong>. His name meant "guardian warrior," and he carried a bright yellow shield with a bold red stripe and six red roses.</p>
-                <p style="margin-top: 15px;">Wally wasn't alone in his adventures! He had three young squires who were learning to become knights:</p>
+                <p style="margin-top: 20px;">Long ago, there lived a brave knight named <strong>Sir Wallace "Wally"
+                        Worner</strong>. His name meant "guardian warrior," and he carried a bright yellow shield with a
+                    bold red stripe and six red roses.</p>
+                <p style="margin-top: 15px;">Wally wasn't alone in his adventures! He had three young squires who were
+                    learning to become knights:</p>
                 <p style="margin-top: 10px;"><strong>Marco</strong> - brave and strong<br>
-                <strong>Seraphine</strong> - clever and quick<br>
-                <strong>Lola</strong> - kind and determined</p>
-                <p style="margin-top: 15px;">Their family motto was: <em>"Non nobis tantum nati"</em> — "Not born for ourselves alone."</p>
+                    <strong>Seraphine</strong> - clever and quick<br>
+                    <strong>Lola</strong> - kind and determined
+                </p>
+                <p style="margin-top: 15px;">Their family motto was: <em>"Non nobis tantum nati"</em> — "Not born for
+                    ourselves alone."</p>
                 <p style="margin-top: 15px;">This is the story of their greatest adventure...</p>
             </div>
             <div class="page-number">1</div>
@@ -89,11 +92,15 @@
             </div>
             <div class="text-content">
                 <h1>The Call to Malta</h1>
-                <p>One spring morning, a messenger arrived at Wally's castle, covered in dust from riding hard for days.</p>
-                <p style="margin-top: 15px;">"Sir Wally!" the messenger gasped. "Malta is in terrible danger! The Ottoman Empire has sent hundreds of ships and thousands of soldiers to capture the island!"</p>
+                <p>One spring morning, a messenger arrived at Wally's castle, covered in dust from riding hard for days.
+                </p>
+                <p style="margin-top: 15px;">"Sir Wally!" the messenger gasped. "Malta is in terrible danger! The
+                    Ottoman Empire has sent hundreds of ships and thousands of soldiers to capture the island!"</p>
                 <p style="margin-top: 15px;">Marco, Seraphine, and Lola gathered around.</p>
-                <p style="margin-top: 15px;">"Grand Master Jean de la Valette calls for all brave knights to defend Malta!" the messenger continued.</p>
-                <p style="margin-top: 15px;">Wally looked at his young squires. "Malta needs us. The Knights of St. John are outnumbered ten to one. Will you come with me on this dangerous journey?"</p>
+                <p style="margin-top: 15px;">"Grand Master Jean de la Valette calls for all brave knights to defend
+                    Malta!" the messenger continued.</p>
+                <p style="margin-top: 15px;">Wally looked at his young squires. "Malta needs us. The Knights of St. John
+                    are outnumbered ten to one. Will you come with me on this dangerous journey?"</p>
                 <p style="margin-top: 15px;">"YES!" they all shouted together.</p>
                 <p style="margin-top: 15px;"><em>"Pack your bags, squires. We sail for Malta!"</em></p>
             </div>
@@ -110,12 +117,16 @@
             <div class="text-content">
                 <h1>The Perilous Voyage</h1>
                 <p>The voyage across the Mediterranean Sea was their first great adventure!</p>
-                <p style="margin-top: 15px;">One night, a terrible storm hit. Lightning cracked! Waves crashed! The ship rocked violently.</p>
+                <p style="margin-top: 15px;">One night, a terrible storm hit. Lightning cracked! Waves crashed! The ship
+                    rocked violently.</p>
                 <p style="margin-top: 15px;">"I'm scared!" said Lola, holding tight to the mast.</p>
                 <p style="margin-top: 15px;">"We'll be okay," Marco said bravely, though he was scared too.</p>
-                <p style="margin-top: 15px;">Seraphine noticed something. "Look! The stars are making a pattern through the clouds!"</p>
-                <p style="margin-top: 15px;">Wally saw it too. <em>"Captain! Follow those stars! Change course!"</em></p>
-                <p style="margin-top: 15px;">By morning, they sailed into calm waters. There, golden in the sunrise, was Malta!</p>
+                <p style="margin-top: 15px;">Seraphine noticed something. "Look! The stars are making a pattern through
+                    the clouds!"</p>
+                <p style="margin-top: 15px;">Wally saw it too. <em>"Captain! Follow those stars! Change course!"</em>
+                </p>
+                <p style="margin-top: 15px;">By morning, they sailed into calm waters. There, golden in the sunrise, was
+                    Malta!</p>
                 <p style="margin-top: 15px;">"We made it!" the children cheered. Their adventure was just beginning.</p>
             </div>
             <div class="page-number">3</div>
@@ -130,12 +141,18 @@
             </div>
             <div class="text-content">
                 <h1>Discovering Stella</h1>
-                <p>When they arrived, Wally met <strong>Jean de la Valette</strong>—the legendary Grand Master with steel-gray eyes.</p>
-                <p style="margin-top: 15px;"><em>"Your motto—'Not born for ourselves alone.' Good. We need knights who believe that. The Ottomans will attack Senglea. If Senglea falls, Malta falls."</em></p>
-                <p style="margin-top: 15px;">That night, Wally and his squires explored the streets of Senglea. They walked down <strong>Triq il-Kurcifiss</strong>—the Street of the Crucifix.</p>
-                <p style="margin-top: 15px;">One house caught their eye: <strong>number 38</strong>. Its golden limestone walls were thick and strong.</p>
-                <p style="margin-top: 15px;">An old Maltese woman smiled. "Beautiful house, yes? Protect us, Sir Knight!"</p>
-                <p style="margin-top: 15px;">She gave them fresh ftira bread and cheese. <em>"This house will stand,"</em> Wally promised.</p>
+                <p>When they arrived, Wally met <strong>Jean de la Valette</strong>—the legendary Grand Master with
+                    steel-gray eyes.</p>
+                <p style="margin-top: 15px;"><em>"Your motto—'Not born for ourselves alone.' Good. We need knights who
+                        believe that. The Ottomans will attack Senglea. If Senglea falls, Malta falls."</em></p>
+                <p style="margin-top: 15px;">That night, Wally and his squires explored the streets of Senglea. They
+                    walked down <strong>Triq il-Kurcifiss</strong>—the Street of the Crucifix.</p>
+                <p style="margin-top: 15px;">One house caught their eye: <strong>number 38</strong>. Its golden
+                    limestone walls were thick and strong.</p>
+                <p style="margin-top: 15px;">An old Maltese woman smiled. "Beautiful house, yes? Protect us, Sir
+                    Knight!"</p>
+                <p style="margin-top: 15px;">She gave them fresh ftira bread and cheese. <em>"This house will
+                        stand,"</em> Wally promised.</p>
             </div>
             <div class="page-number">4</div>
         </div>
@@ -153,11 +170,15 @@
                 <h1>The Siege Begins!</h1>
                 <p>Suddenly, bells rang from every church! <em>DONG! DONG! DONG!</em></p>
                 <p style="margin-top: 15px;">"Look!" shouted Marco, pointing at the harbor.</p>
-                <p style="margin-top: 15px;">The horizon was filled with ships—hundreds of them! The Ottoman Empire had arrived with 40,000 soldiers!</p>
+                <p style="margin-top: 15px;">The horizon was filled with ships—hundreds of them! The Ottoman Empire had
+                    arrived with 40,000 soldiers!</p>
                 <p style="margin-top: 15px;">"To the walls of Senglea!" commanded Wally. "We defend Malta here!"</p>
-                <p style="margin-top: 15px;">The three squires grabbed their shields. They were scared, but they were ready.</p>
+                <p style="margin-top: 15px;">The three squires grabbed their shields. They were scared, but they were
+                    ready.</p>
                 <p style="margin-top: 15px;"><em>"For Malta! For Senglea! For Stella!"</em> they shouted together.</p>
-                <p style="margin-top: 10px; font-size: 16px; color: #8b0000; text-align: right; font-family: 'Chewy', cursive;">(Tap the bomb to fire the cannons!)</p>
+                <p
+                    style="margin-top: 10px; font-size: 16px; color: #8b0000; text-align: right; font-family: 'Playfair Display', serif;">
+                    (Tap the bomb to fire the cannons!)</p>
             </div>
             <div class="page-number">5</div>
         </div>
@@ -176,11 +197,15 @@
                 <h1>The Great Battle!</h1>
                 <p><strong>August 7th, 1565</strong> - The biggest battle of all!</p>
                 <p style="margin-top: 15px;">The Ottomans attacked from BOTH land AND sea!</p>
-                <p style="margin-top: 15px;">Wally had a brilliant idea: "We'll use the houses as fortresses! Position cannons in the windows!"</p>
-                <p style="margin-top: 15px;">From number 38, they could see the whole harbor. Marco spotted enemy boats. Seraphine helped load the cannons. Lola carried water to the defenders.</p>
+                <p style="margin-top: 15px;">Wally had a brilliant idea: "We'll use the houses as fortresses! Position
+                    cannons in the windows!"</p>
+                <p style="margin-top: 15px;">From number 38, they could see the whole harbor. Marco spotted enemy boats.
+                    Seraphine helped load the cannons. Lola carried water to the defenders.</p>
                 <p style="margin-top: 15px;">BOOM! CRASH! The battle raged all day.</p>
-                <p style="margin-top: 15px;">The old woman brought them rabbit stew for strength. "You're defending my home!" she said. "Thank you!"</p>
-                <p style="margin-top: 15px;">By sunset, the Ottomans retreated. Number 38 had held! Senglea had held! Malta was saved!</p>
+                <p style="margin-top: 15px;">The old woman brought them rabbit stew for strength. "You're defending my
+                    home!" she said. "Thank you!"</p>
+                <p style="margin-top: 15px;">By sunset, the Ottomans retreated. Number 38 had held! Senglea had held!
+                    Malta was saved!</p>
             </div>
             <div class="page-number">6</div>
         </div>
@@ -196,10 +221,14 @@
             <div class="text-content">
                 <h1>Stella - The Star</h1>
                 <p>That evening, Jean de la Valette found Wally and his squires outside number 38.</p>
-                <p style="margin-top: 15px;"><em>"Today you saved Senglea. This house was the key to our victory."</em></p>
-                <p style="margin-top: 15px;">The Grand Master looked up at the house. <em>"This house stood like a star of hope in our darkest hour. Let us call it 'Stella'—The Star."</em></p>
-                <p style="margin-top: 15px;">He removed his ring. <em>"I give you Stella—number 38 Triq il-Kurcifiss. It is yours, for you and your family, forever."</em></p>
-                <p style="margin-top: 15px;">That night, they celebrated with a great feast! The old woman made her famous stuffat tal-fenek (rabbit stew). Everyone ate, danced, and celebrated.</p>
+                <p style="margin-top: 15px;"><em>"Today you saved Senglea. This house was the key to our victory."</em>
+                </p>
+                <p style="margin-top: 15px;">The Grand Master looked up at the house. <em>"This house stood like a star
+                        of hope in our darkest hour. Let us call it 'Stella'—The Star."</em></p>
+                <p style="margin-top: 15px;">He removed his ring. <em>"I give you Stella—number 38 Triq il-Kurcifiss. It
+                        is yours, for you and your family, forever."</em></p>
+                <p style="margin-top: 15px;">That night, they celebrated with a great feast! The old woman made her
+                    famous stuffat tal-fenek (rabbit stew). Everyone ate, danced, and celebrated.</p>
                 <p style="margin-top: 15px;">Marco, Seraphine, and Lola had helped defend Malta. They were heroes!</p>
             </div>
             <div class="page-number">7</div>
@@ -214,12 +243,20 @@
             </div>
             <div class="text-content">
                 <h1>The Legacy Lives On</h1>
-                <p>Wally Worner lived happily in Stella for the rest of his life. Marco, Seraphine, and Lola grew up to become brave knights themselves.</p>
-                <p style="margin-top: 15px;">They never forgot their motto: <em>"Non nobis tantum nati"</em> - Not born for ourselves alone.</p>
-                <p style="margin-top: 15px;">They had learned that true heroes help others, share what they have, and never give up.</p>
-                <p style="margin-top: 15px;"><strong>And to this day...</strong> if you visit Malta and walk down Triq il-Kurcifiss in Senglea, you can still see Stella standing at number 38—the Star that shone through the Great Siege!</p>
-                <p style="font-size: 14px; color: #555; text-align: center; margin-top: 10px;">(That's the real Stella in the photo!)</p>
-                <p style="text-align: center; margin-top: 15px; font-family: 'Chewy'; font-size: 20px; color: #8b0000;">The End... or is it? (Read Book 2!)</p>
+                <p>Wally Worner lived happily in Stella for the rest of his life. Marco, Seraphine, and Lola grew up to
+                    become brave knights themselves.</p>
+                <p style="margin-top: 15px;">They never forgot their motto: <em>"Non nobis tantum nati"</em> - Not born
+                    for ourselves alone.</p>
+                <p style="margin-top: 15px;">They had learned that true heroes help others, share what they have, and
+                    never give up.</p>
+                <p style="margin-top: 15px;"><strong>And to this day...</strong> if you visit Malta and walk down Triq
+                    il-Kurcifiss in Senglea, you can still see Stella standing at number 38—the Star that shone through
+                    the Great Siege!</p>
+                <p style="font-size: 14px; color: #555; text-align: center; margin-top: 10px;">(That's the real Stella
+                    in the photo!)</p>
+                <p
+                    style="text-align: center; margin-top: 15px; font-family: 'Playfair Display', serif; font-size: 20px; color: #8b0000;">
+                    The End... or is it? (Read Book 2!)</p>
             </div>
             <div class="page-number">8</div>
         </div>
@@ -255,7 +292,8 @@
             <div class="pirate-ship-icon" style="bottom: 30%; left: 80%; animation-delay: 2s;" title="Ottoman Fleet">⚓
             </div>
 
-            <p style="margin-top: 10px; font-family: 'Chewy'; font-size: 20px;">Explore where the Great Siege happened!
+            <p style="margin-top: 10px; font-family: 'Playfair Display', serif; font-size: 20px;">Explore where the
+                Great Siege happened!
             </p>
         </div>
     </div>
