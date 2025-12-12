@@ -28,124 +28,41 @@
 
         /* Book card styling */
         .book-card {
-            background: linear-gradient(135deg, #fdf6e3 0%, #f5e6d3 50%, #fff8e1 100%);
-            background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
-            padding: 35px 30px 35px 40px;
-            border-radius: 2px 25px 25px 2px;
-            border: 8px solid #8b6f47;
-            border-left: 22px solid #4a3428;
-            box-shadow:
-                15px 15px 35px rgba(0, 0, 0, 0.6),
-                inset 30px 0 60px rgba(74, 52, 40, 0.5),
-                inset -20px 0 30px rgba(139, 111, 71, 0.25),
-                inset -8px 0 20px rgba(0, 0, 0, 0.2),
-                inset 0 -5px 10px rgba(0, 0, 0, 0.15),
-                inset 0 5px 10px rgba(255, 255, 255, 0.1),
-                0 0 0 2px #6b5438,
-                0 0 0 4px rgba(139, 111, 71, 0.4);
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s;
-            width: 360px;
+            background: transparent;
+            padding: 0;
+            border: none;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 300px;
+            /* Standard Little Golden Book size approx */
             max-width: 90%;
-            position: relative;
             cursor: pointer;
-            overflow: visible;
-        }
-
-        .book-card::before {
-            content: '';
-            position: absolute;
-            left: -22px;
-            top: 15%;
-            width: 22px;
-            height: 70%;
-            background:
-                repeating-linear-gradient(180deg,
-                    rgba(74, 52, 40, 0.9) 0px,
-                    rgba(74, 52, 40, 0.9) 3px,
-                    rgba(107, 84, 56, 0.4) 3px,
-                    rgba(107, 84, 56, 0.4) 6px),
-                linear-gradient(90deg,
-                    rgba(74, 52, 40, 1) 0%,
-                    rgba(93, 64, 55, 0.7) 20%,
-                    rgba(74, 52, 40, 0.9) 50%,
-                    rgba(93, 64, 55, 0.7) 80%,
-                    rgba(74, 52, 40, 1) 100%);
-            border-right: 3px solid rgba(107, 84, 56, 0.6);
-            box-shadow:
-                inset -3px 0 8px rgba(0, 0, 0, 0.4),
-                inset 3px 0 5px rgba(139, 111, 71, 0.2);
-        }
-
-        .book-card::after {
-            content: '';
-            position: absolute;
-            right: -8px;
-            top: -2px;
-            bottom: -2px;
-            width: 12px;
-            background: repeating-linear-gradient(90deg,
-                    #f5e6d3 0px,
-                    #f5e6d3 1.5px,
-                    #e8d5b7 1.5px,
-                    #e8d5b7 3px,
-                    #d4c4a8 3px,
-                    #d4c4a8 4.5px);
-            border-radius: 0 25px 25px 0;
-            box-shadow:
-                inset -4px 0 8px rgba(0, 0, 0, 0.3),
-                2px 0 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .book-card p {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%) !important;
-            padding: 12px 15px !important;
-            border-radius: 8px !important;
-            border: 1px solid rgba(139, 111, 71, 0.3) !important;
-            box-shadow:
-                inset 0 1px 3px rgba(255, 255, 255, 0.7),
-                inset 0 -1px 2px rgba(0, 0, 0, 0.15),
-                0 2px 5px rgba(0, 0, 0, 0.15) !important;
-            margin-top: 25px !important;
-            font-weight: 600 !important;
-            letter-spacing: 0.5px !important;
-            text-align: center !important;
-            font-size: 16px !important;
-            white-space: nowrap !important;
-            color: #5d4037 !important;
+            border-radius: 4px;
+            /* Slight rounding for cover */
         }
 
         .book-card img {
-            border-radius: 4px;
-            box-shadow:
-                0 4px 12px rgba(0, 0, 0, 0.3),
-                inset 0 0 0 1px rgba(139, 111, 71, 0.2);
-            height: 180px;
-            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+            width: 100%;
+            height: auto;
             display: block;
-            margin: 0 auto;
-        }
-
-        .book-card img.sepia {
-            filter: sepia(0.3) drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+            border-radius: 4px;
         }
 
         .book-card:hover {
-            transform: scale(1.08) translateY(-8px) rotateY(-2deg);
-            box-shadow:
-                20px 20px 45px rgba(0, 0, 0, 0.7),
-                inset 30px 0 60px rgba(74, 52, 40, 0.6),
-                inset -20px 0 30px rgba(139, 111, 71, 0.35),
-                inset -8px 0 20px rgba(0, 0, 0, 0.25),
-                inset 0 -5px 10px rgba(0, 0, 0, 0.2),
-                inset 0 5px 10px rgba(255, 255, 255, 0.15),
-                0 0 0 2px #6b5438,
-                0 0 0 4px rgba(139, 111, 71, 0.5);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
+
+
 
         .subtitle-text {
             margin-top: 50px;
-            font-size: 16px;
-            color: #555;
+            font-size: 36px;
+            font-family: 'Chewy', cursive;
+            color: #b71c1c;
+            font-weight: 700;
+            text-shadow: 2px 2px 0px rgba(255, 213, 79, 0.5);
+            line-height: 1.2;
         }
 
         /* Mobile responsive styles */
@@ -160,36 +77,21 @@
             }
 
             .book-card {
-                width: 85% !important;
+                width: 70% !important;
+                /* Larger on mobile to see details */
                 max-width: 320px !important;
-                padding: 25px 20px 25px 30px !important;
-                border-left-width: 15px !important;
-                border-width: 5px !important;
-            }
-
-            .book-card::before {
-                width: 15px !important;
-                left: -15px !important;
-            }
-
-            .book-card::after {
-                width: 8px !important;
-                right: -5px !important;
+                padding: 0 !important;
+                border: none !important;
             }
 
             .book-card img {
-                height: 140px !important;
-            }
-
-            .book-card p {
-                font-size: 14px !important;
-                padding: 10px 12px !important;
-                margin-top: 15px !important;
+                height: auto !important;
+                /* Allow natural aspect ratio */
             }
 
             .subtitle-text {
                 margin-top: 25px !important;
-                font-size: 14px !important;
+                font-size: 26px !important;
             }
         }
 
@@ -204,12 +106,8 @@
             }
 
             .book-card {
-                width: 90% !important;
+                width: 80% !important;
                 max-width: 280px !important;
-            }
-
-            .book-card img {
-                height: 120px !important;
             }
         }
     </style>
@@ -224,18 +122,16 @@
             <div class="books-container">
                 <!-- Book 1 Card -->
                 <div class="book-card" onclick="window.location.href='book1.html'">
-                    <img src="assets/images/worner.png?v=2" alt="Wally Worner">
-                    <p>The Siege of Malta (1565)</p>
+                    <img src="assets/images/cover_book1.png" alt="The Siege of Malta (1565)">
                 </div>
 
                 <!-- Book 2 Card -->
                 <div class="book-card" onclick="window.location.href='book2.html'">
-                    <img src="assets/images/young_wally.png" class="sepia" alt="Young Wally">
-                    <p>Fortress Malta (1940)</p>
+                    <img src="assets/images/cover_book2.png" alt="Fortress Malta (1940)">
                 </div>
             </div>
 
-            <p class="subtitle-text">Pick a story to start your adventure!</p>
+            <p class="subtitle-text">Pick Your Story Adventure!</p>
         </div>
     </div>
 </body>
