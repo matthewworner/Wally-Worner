@@ -15,9 +15,11 @@
     --malta-stone: #e8d5b7;
     --malta-gold: #d4af37;
 
-    /* Vintage paper tones */
-    --vintage-cream: #faf6ed;
-    --vintage-aged: #f5f0e3;
+    /* Vintage paper tones - Darker & Richer */
+    --vintage-cream: #f7e7b5;
+    /* Rich parchment */
+    --vintage-aged: #e6cba5;
+    /* Aged tan */
 
     /* Fonts */
     --font-heading: 'Playfair Display', serif;
@@ -33,11 +35,13 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #fcefd0 !important;
-    /* Custard cream */
-    background-image: radial-gradient(#ffd54f 1px, transparent 1px) !important;
-    background-size: 20px 20px !important;
-    /* Polka dot pattern */
+    /* Rich Warm Background - No more white! */
+    background-color: #e6c288 !important;
+    /* Darker vintage gold/tan */
+    background-image:
+        radial-gradient(#d4af37 1px, transparent 1px),
+        url('https://www.transparenttextures.com/patterns/wood-pattern.png') !important;
+    background-size: 20px 20px, auto !important;
     font-family: var(--font-body);
     overflow-x: hidden;
     overflow-y: auto;
@@ -56,12 +60,13 @@ body {
     width: 95%;
     min-height: 95vh;
     max-width: 1000px;
-    background-color: #fff9e6;
-    /* Warm creamy yellow - classic storybook page */
+    /* Properly aged paper - definitely not white */
+    background-color: #f3e5ab;
+    /* Vanilla/Parchment */
     background-image:
-        linear-gradient(to right, rgba(0, 0, 0, 0.05) 0%, transparent 10%),
+        linear-gradient(to right, rgba(60, 40, 0, 0.1) 0%, transparent 10%),
         /* Spine shadow */
-        url('https://www.transparenttextures.com/patterns/cream-paper.png');
+        url('https://www.transparenttextures.com/patterns/parchment.png');
     padding: 0;
 
     /* The Magical Frame */
