@@ -11,39 +11,46 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
+        /* Main heading */
+        .main-heading {
+            font-size: 60px;
+            margin-bottom: 50px;
+        }
+
+        /* Books container */
+        .books-container {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        /* Book card styling */
         .book-card {
             background: linear-gradient(135deg, #fdf6e3 0%, #f5e6d3 50%, #fff8e1 100%);
             background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
             padding: 35px 30px 35px 40px;
             border-radius: 2px 25px 25px 2px;
-            /* Premium book cover frame */
             border: 8px solid #8b6f47;
             border-left: 22px solid #4a3428;
-            /* Thick realistic spine */
             box-shadow:
-                /* Main 3D shadow */
                 15px 15px 35px rgba(0, 0, 0, 0.6),
-                /* Deep spine shadow */
                 inset 30px 0 60px rgba(74, 52, 40, 0.5),
-                /* Spine highlight strip */
                 inset -20px 0 30px rgba(139, 111, 71, 0.25),
-                /* Right edge pages depth */
                 inset -8px 0 20px rgba(0, 0, 0, 0.2),
-                /* Top edge shadow */
                 inset 0 -5px 10px rgba(0, 0, 0, 0.15),
-                /* Bottom edge shadow */
                 inset 0 5px 10px rgba(255, 255, 255, 0.1),
-                /* Outer frame border */
                 0 0 0 2px #6b5438,
                 0 0 0 4px rgba(139, 111, 71, 0.4);
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s;
             width: 360px;
+            max-width: 90%;
             position: relative;
             cursor: pointer;
             overflow: visible;
         }
 
-        /* Realistic book spine with binding lines */
         .book-card::before {
             content: '';
             position: absolute;
@@ -51,27 +58,24 @@
             top: 15%;
             width: 22px;
             height: 70%;
-            background: 
-                repeating-linear-gradient(
-                    180deg,
+            background:
+                repeating-linear-gradient(180deg,
                     rgba(74, 52, 40, 0.9) 0px,
                     rgba(74, 52, 40, 0.9) 3px,
                     rgba(107, 84, 56, 0.4) 3px,
-                    rgba(107, 84, 56, 0.4) 6px
-                ),
-                linear-gradient(90deg, 
+                    rgba(107, 84, 56, 0.4) 6px),
+                linear-gradient(90deg,
                     rgba(74, 52, 40, 1) 0%,
                     rgba(93, 64, 55, 0.7) 20%,
                     rgba(74, 52, 40, 0.9) 50%,
                     rgba(93, 64, 55, 0.7) 80%,
                     rgba(74, 52, 40, 1) 100%);
             border-right: 3px solid rgba(107, 84, 56, 0.6);
-            box-shadow: 
+            box-shadow:
                 inset -3px 0 8px rgba(0, 0, 0, 0.4),
                 inset 3px 0 5px rgba(139, 111, 71, 0.2);
         }
 
-        /* Pages edge effect on right side - more visible */
         .book-card::after {
             content: '';
             position: absolute;
@@ -79,28 +83,25 @@
             top: -2px;
             bottom: -2px;
             width: 12px;
-            background: repeating-linear-gradient(
-                90deg,
-                #f5e6d3 0px,
-                #f5e6d3 1.5px,
-                #e8d5b7 1.5px,
-                #e8d5b7 3px,
-                #d4c4a8 3px,
-                #d4c4a8 4.5px
-            );
+            background: repeating-linear-gradient(90deg,
+                    #f5e6d3 0px,
+                    #f5e6d3 1.5px,
+                    #e8d5b7 1.5px,
+                    #e8d5b7 3px,
+                    #d4c4a8 3px,
+                    #d4c4a8 4.5px);
             border-radius: 0 25px 25px 0;
-            box-shadow: 
+            box-shadow:
                 inset -4px 0 8px rgba(0, 0, 0, 0.3),
                 2px 0 5px rgba(0, 0, 0, 0.2);
         }
 
-        /* Title area embossed effect */
         .book-card p {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%) !important;
             padding: 12px 15px !important;
             border-radius: 8px !important;
             border: 1px solid rgba(139, 111, 71, 0.3) !important;
-            box-shadow: 
+            box-shadow:
                 inset 0 1px 3px rgba(255, 255, 255, 0.7),
                 inset 0 -1px 2px rgba(0, 0, 0, 0.15),
                 0 2px 5px rgba(0, 0, 0, 0.15) !important;
@@ -113,12 +114,19 @@
             color: #5d4037 !important;
         }
 
-        /* Image styling for book cover */
         .book-card img {
             border-radius: 4px;
-            box-shadow: 
+            box-shadow:
                 0 4px 12px rgba(0, 0, 0, 0.3),
                 inset 0 0 0 1px rgba(139, 111, 71, 0.2);
+            height: 180px;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+            display: block;
+            margin: 0 auto;
+        }
+
+        .book-card img.sepia {
+            filter: sepia(0.3) drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
         }
 
         .book-card:hover {
@@ -133,6 +141,77 @@
                 0 0 0 2px #6b5438,
                 0 0 0 4px rgba(139, 111, 71, 0.5);
         }
+
+        .subtitle-text {
+            margin-top: 50px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            .main-heading {
+                font-size: 28px !important;
+                margin-bottom: 25px !important;
+            }
+
+            .books-container {
+                gap: 30px !important;
+            }
+
+            .book-card {
+                width: 85% !important;
+                max-width: 320px !important;
+                padding: 25px 20px 25px 30px !important;
+                border-left-width: 15px !important;
+                border-width: 5px !important;
+            }
+
+            .book-card::before {
+                width: 15px !important;
+                left: -15px !important;
+            }
+
+            .book-card::after {
+                width: 8px !important;
+                right: -5px !important;
+            }
+
+            .book-card img {
+                height: 140px !important;
+            }
+
+            .book-card p {
+                font-size: 14px !important;
+                padding: 10px 12px !important;
+                margin-top: 15px !important;
+            }
+
+            .subtitle-text {
+                margin-top: 25px !important;
+                font-size: 14px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-heading {
+                font-size: 24px !important;
+                margin-bottom: 20px !important;
+            }
+
+            .books-container {
+                gap: 20px !important;
+            }
+
+            .book-card {
+                width: 90% !important;
+                max-width: 280px !important;
+            }
+
+            .book-card img {
+                height: 120px !important;
+            }
+        }
     </style>
 </head>
 
@@ -140,25 +219,23 @@
     <div class="book-container" style="display: flex; justify-content: center; align-items: center;">
         <div class="page active"
             style="display: flex; justify-content: center; align-items: center; text-align: center;">
-            <h1 style="font-size: 60px; margin-bottom: 50px;">Wally Worner and Friends</h1>
+            <h1 class="main-heading">Wally Worner and Friends</h1>
 
-            <div style="display: flex; justify-content: center; gap: 80px; flex-wrap: wrap; width: 100%;">
+            <div class="books-container">
                 <!-- Book 1 Card -->
-                <div class="book-card" onclick="window.location.href='book1.html'" style="cursor: pointer;">
-                    <img src="assets/images/worner.png?v=2"
-                        style="height: 180px; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3)); display: block; margin: 0 auto;">
-                    <p style="text-align: center; font-size: 18px; margin: 0;">The Siege of Malta (1565)</p>
+                <div class="book-card" onclick="window.location.href='book1.html'">
+                    <img src="assets/images/worner.png?v=2" alt="Wally Worner">
+                    <p>The Siege of Malta (1565)</p>
                 </div>
 
                 <!-- Book 2 Card -->
-                <div class="book-card" onclick="window.location.href='book2.html'" style="cursor: pointer;">
-                    <img src="assets/images/young_wally.png"
-                        style="height: 180px; filter: sepia(0.3) drop-shadow(0 5px 10px rgba(0,0,0,0.3)); display: block; margin: 0 auto;">
-                    <p style="text-align: center; font-size: 18px; margin: 0;">Fortress Malta (1940)</p>
+                <div class="book-card" onclick="window.location.href='book2.html'">
+                    <img src="assets/images/young_wally.png" class="sepia" alt="Young Wally">
+                    <p>Fortress Malta (1940)</p>
                 </div>
             </div>
 
-            <p style="margin-top: 50px; font-size: 16px; color: #555;">Select a book to begin your adventure!</p>
+            <p class="subtitle-text">Select a book to begin your adventure!</p>
         </div>
     </div>
 </body>
