@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Young Wally and Fortress Malta</title>
     <!-- Premium Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chewy&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -18,18 +20,21 @@
     <audio id="snd-cannon" src="https://assets.mixkit.co/active_storage/sfx/1703/1703-preview.mp3"></audio>
     <audio id="snd-bells" src="https://assets.mixkit.co/active_storage/sfx/573/573-preview.mp3"></audio>
 
-    <div class="rabbit-counter-panel" style="position: fixed; top: 10px; right: 20px; z-index: 151; background: #fff8e1; border: 2px solid #5d4037; border-radius: 20px; padding: 5px 15px; font-family: 'Chewy', cursive; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 5px rgba(0,0,0,0.2);">
+    <div class="rabbit-counter-panel"
+        style="position: fixed; top: 10px; right: 20px; z-index: 151; background: #fff8e1; border: 2px solid #5d4037; border-radius: 20px; padding: 5px 15px; font-family: 'Chewy', cursive; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 5px rgba(0,0,0,0.2);">
         <img src="assets/images/rabbit.png" alt="Rabbit" style="width: 40px;"> <span id="rabbit-count">0/8 Found</span>
     </div>
 
     <!-- Home Button -->
     <div style="position: fixed; top: 20px; left: 20px; z-index: 150;">
-        <button onclick="window.location.href='index.html'" style="padding: 10px; font-family: 'Chewy'; font-size: 20px; border-radius: 10px; background: #FFD700; border: 3px solid #5d4037; color: #5d4037; cursor: pointer; box-shadow: 0 4px 5px rgba(0,0,0,0.3);">
+        <button onclick="window.location.href='index.html'"
+            style="padding: 10px; font-family: 'Chewy'; font-size: 20px; border-radius: 10px; background: #FFD700; border: 3px solid #5d4037; color: #5d4037; cursor: pointer; box-shadow: 0 4px 5px rgba(0,0,0,0.3);">
             🏠 Home
         </button>
     </div>
 
-    <div class="game-tip" id="gameTip" style="display: none; position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); background: #fff; padding: 15px 30px; border-radius: 50px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); z-index: 160; animation: bounce 2s infinite;">
+    <div class="game-tip" id="gameTip"
+        style="display: none; position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); background: #fff; padding: 15px 30px; border-radius: 50px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); z-index: 160; animation: bounce 2s infinite;">
         <strong>Psst!</strong> Can you spot all 8 rabbits in WWII Malta? 🐰
     </div>
 
@@ -39,14 +44,12 @@
             <h1 class="cover-title">Young Wally<br>and<br>Fortress Malta</h1>
 
             <div class="cover-collage">
-                <div style="font-size: 80px; position: absolute; left: 10%; top: 15%; animation: fly 3s ease-in-out infinite;">✈️</div>
-                <div style="font-size: 60px; position: absolute; right: 15%; top: 25%; animation: float 2s ease-in-out infinite;">⭐</div>
-                <img src="assets/images/worner.png?v=2" alt="Young Wally" class="cover-main-img" style="filter: sepia(0.3);">
+                <img src="assets/images/young_wally.png" alt="Young Wally" class="cover-main-img"
+                    style="filter: sepia(0.3);">
             </div>
 
             <p class="cover-decoration">The Second Siege • 375 Years Later</p>
             <p style="font-family: 'Chewy'; font-size: 18px; margin-top: 10px;">Malta, 1940-1943</p>
-            <p style="font-family: 'Chewy'; font-size: 14px; margin-top: 5px; color: #666;">For Australian & New Zealand Kids</p>
 
             <button class="start-btn" onclick="nextPage()">Start Reading</button>
             <img src="assets/images/rabbit.png" alt="Rabbit" class="anim-float" style="width: 80px; margin-top: 20px;">
@@ -54,18 +57,22 @@
 
         <!-- PAGE 1: THE ATTIC DISCOVERY -->
         <div class="page">
-            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="bottom: 85px; left: 30px; transform: rotate(10deg);" onclick="foundRabbit(this)">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="bottom: 85px; left: 30px; transform: rotate(10deg);" onclick="foundRabbit(this)">
             <div class="illustration" onclick="animateElement(this, 'glow')">
-                <img src="assets/images/real_stella/staircase.jpg" alt="Stella Attic" class="anim-glow" style="border: 5px solid #fff; width: 80%;">
+                <img src="assets/images/house_stella.png" alt="Stella House" class="anim-glow">
             </div>
             <div class="text-content">
                 <h1>The Attic Discovery</h1>
                 <p><strong>June 1940 • Stella, Senglea, Malta</strong></p>
-                <p style="margin-top: 15px;">Young Wally Worner (age 12) climbed into the dusty attic of Stella with his cousins <strong>Marco</strong> and <strong>Seraphine</strong>, and friend <strong>Lola</strong>.</p>
+                <p style="margin-top: 15px;">Young Wally Worner (age 12) climbed into the dusty attic of Stella with his
+                    cousins <strong>Marco</strong> and <strong>Seraphine</strong>, and friend <strong>Lola</strong>.</p>
                 <p style="margin-top: 15px;">"What are we looking for?" asked Marco.</p>
                 <p style="margin-top: 15px;">"Grandmother said there's something important up here," Wally replied.</p>
-                <p style="margin-top: 15px;">Behind a wooden chest, they found it—an ancient coat of arms! Yellow shield, red stripe, six red roses.</p>
-                <p style="margin-top: 15px;">"<em>Non nobis tantum nati</em>," Seraphine read aloud. "What does that mean?"</p>
+                <p style="margin-top: 15px;">Behind a wooden chest, they found it—an ancient coat of arms! Yellow
+                    shield, red stripe, six red roses.</p>
+                <p style="margin-top: 15px;">"<em>Non nobis tantum nati</em>," Seraphine read aloud. "What does that
+                    mean?"</p>
                 <p style="margin-top: 15px;">Suddenly, air raid sirens wailed outside. The war had come to Malta.</p>
             </div>
             <div class="page-number">1</div>
@@ -73,19 +80,23 @@
 
         <!-- PAGE 2: GRANDMOTHER'S STORY -->
         <div class="page">
-            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="top: 20px; right: 40px; transform: rotate(-20deg);" onclick="foundRabbit(this)">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="top: 20px; right: 40px; transform: rotate(-20deg);" onclick="foundRabbit(this)">
             <div class="illustration" onclick="animateElement(this, 'glow')">
-                <img src="assets/images/worner.png?v=2" alt="First Wally" class="anim-glow" style="width: 45%; margin-right: 10px;">
-                <img src="assets/images/real_stella/bedroom.jpg" alt="Stella Today" class="anim-glow" style="border: 5px solid #fff; width: 45%;">
+                <img src="assets/images/worner.png?v=2" alt="First Wally" class="anim-glow">
             </div>
             <div class="text-content">
                 <h1>The First Wally's Story</h1>
                 <p>That night in the shelter, Grandmother told them the story.</p>
-                <p style="margin-top: 15px;">"375 years ago, your ancestor—also named Wally Worner—defended this very house during the Great Siege of 1565. He fought alongside Jean de la Valette."</p>
-                <p style="margin-top: 15px;">"He had three young squires too," she continued, smiling at them. "Just like you four."</p>
-                <p style="margin-top: 15px;">"The motto means 'Not born for ourselves alone.' It means we help each other. We protect each other."</p>
+                <p style="margin-top: 15px;">"375 years ago, your ancestor—also named Wally Worner—defended this very
+                    house during the Great Siege of 1565. He fought alongside Jean de la Valette."</p>
+                <p style="margin-top: 15px;">"He had three young squires too," she continued, smiling at them. "Just
+                    like you four."</p>
+                <p style="margin-top: 15px;">"The motto means 'Not born for ourselves alone.' It means we help each
+                    other. We protect each other."</p>
                 <p style="margin-top: 15px;">Lola looked worried. "Is Malta being attacked again?"</p>
-                <p style="margin-top: 15px;">"Yes," Grandmother said gently. "But just like 1565, we won't give up. Will you four be brave like the first Wally?"</p>
+                <p style="margin-top: 15px;">"Yes," Grandmother said gently. "But just like 1565, we won't give up. Will
+                    you four be brave like the first Wally?"</p>
                 <p style="margin-top: 15px;">"YES!" they all said together.</p>
             </div>
             <div class="page-number">2</div>
@@ -93,26 +104,35 @@
 
         <!-- PAGE 3: MEETING LAURENCE & THE SHELTER FRIENDS -->
         <div class="page">
-            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="bottom: 100px; left: 50px; transform: rotate(15deg);" onclick="foundRabbit(this)">
-            <div class="illustration">
-                <img src="assets/images/real_stella/kitchen.jpg" alt="Shelter Life" style="border: 5px solid #fff; width: 80%; opacity: 0.9;">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="bottom: 100px; left: 50px; transform: rotate(15deg);" onclick="foundRabbit(this)">
+            <div class="illustration" onclick="animateElement(this, 'glow')">
+                <img src="assets/images/shelter_friends.png" alt="Shelter Friends" class="anim-glow"
+                    style="border: 5px solid #fff; width: 80%;">
             </div>
             <div class="text-content">
                 <h1>Shelter Friends</h1>
                 <p>In the deep limestone shelter beneath Senglea, the four friends met another boy their age.</p>
-                <p style="margin-top: 15px;">"I'm Laurence Mizzi," he said quietly. "My family lives near the docks."</p>
-                <p style="margin-top: 15px;">"We're the Worner crew!" Marco said. "I'm Marco, that's Seraphine, Lola, and Wally."</p>
-                <p style="margin-top: 15px;">They became friends instantly, sharing stories and the little food they had.</p>
-                <p style="margin-top: 15px;">Above them, bombs fell. The shelter shook. But together, they felt braver.</p>
-                <p style="margin-top: 15px;">"I think I suffer more from hunger than from bombs," Laurence said one night.</p>
-                <p style="margin-top: 15px;">Wally broke his last piece of bread into five pieces. "We share everything. That's what friends do. <em>Non nobis tantum nati.</em>"</p>
+                <p style="margin-top: 15px;">"I'm Laurence Mizzi," he said quietly. "My family lives near the docks."
+                </p>
+                <p style="margin-top: 15px;">"We're the Worner crew!" Marco said. "I'm Marco, that's Seraphine, Lola,
+                    and Wally."</p>
+                <p style="margin-top: 15px;">They became friends instantly, sharing stories and the little food they
+                    had.</p>
+                <p style="margin-top: 15px;">Above them, bombs fell. The shelter shook. But together, they felt braver.
+                </p>
+                <p style="margin-top: 15px;">"I think I suffer more from hunger than from bombs," Laurence said one
+                    night.</p>
+                <p style="margin-top: 15px;">Wally broke his last piece of bread into five pieces. "We share everything.
+                    That's what friends do. <em>Non nobis tantum nati.</em>"</p>
             </div>
             <div class="page-number">3</div>
         </div>
 
         <!-- PAGE 4: THE HEROES OF MALTA -->
         <div class="page">
-            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="top: 80px; right: 80px; transform: rotate(45deg);" onclick="foundRabbit(this)">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="top: 80px; right: 80px; transform: rotate(45deg);" onclick="foundRabbit(this)">
             <div class="illustration" onclick="animateElement(this, 'glow')">
                 <div style="text-align: center; padding: 20px; background: rgba(255,255,255,0.9); border-radius: 15px;">
                     <h2 style="font-family: 'Chewy'; color: #8b0000; margin-bottom: 15px;">Malta's Heroes</h2>
@@ -129,9 +149,13 @@
             <div class="text-content">
                 <h1>Not All Heroes Fly Planes</h1>
                 <p>One long night in the shelter, Grandmother told them about Malta's heroes.</p>
-                <p style="margin-top: 15px;"><strong>Mary Ellul</strong> - Malta's only female Air Raid Warden, so strong she could lift beams that three men couldn't move. She pulled people from rubble with her bare hands.</p>
-                <p style="margin-top: 15px;"><strong>Mabel Strickland</strong> - Even when bombs hit her newspaper building twice, she kept publishing the truth from a cave!</p>
-                <p style="margin-top: 15px;"><strong>Henrietta Chevalier</strong> - A Maltese mother in Rome saving 4,000 refugees, risking everything.</p>
+                <p style="margin-top: 15px;"><strong>Mary Ellul</strong> - Malta's only female Air Raid Warden, so
+                    strong she could lift beams that three men couldn't move. She pulled people from rubble with her
+                    bare hands.</p>
+                <p style="margin-top: 15px;"><strong>Mabel Strickland</strong> - Even when bombs hit her newspaper
+                    building twice, she kept publishing the truth from a cave!</p>
+                <p style="margin-top: 15px;"><strong>Henrietta Chevalier</strong> - A Maltese mother in Rome saving
+                    4,000 refugees, risking everything.</p>
                 <p style="margin-top: 15px;">"Heroes come in all forms," Grandmother said. "Just like you five."</p>
             </div>
             <div class="page-number">4</div>
@@ -139,20 +163,26 @@
 
         <!-- PAGE 5: THE SPITFIRES & BUZZ BEURLING -->
         <div class="page">
-            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="bottom: 50px; left: 20px; transform: rotate(-5deg);" onclick="foundRabbit(this)">
-            <div class="interactive-overlay" style="top: 80px; right: 60px; font-size: 50px;" onclick="playSound('plane')" title="Spitfire!">✈️</div>
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="bottom: 50px; left: 20px; transform: rotate(-5deg);" onclick="foundRabbit(this)">
+            <div class="interactive-overlay" style="top: 80px; right: 60px; font-size: 50px;"
+                onclick="playSound('plane')" title="Spitfire!">✈️</div>
             <div class="illustration" onclick="animateElement(this, 'fly')">
                 <div style="font-size: 120px; animation: fly 2s ease-in-out infinite;">✈️</div>
             </div>
             <div class="text-content">
                 <h1>The Falcon Arrives!</h1>
                 <p><strong>April 1942</strong></p>
-                <p style="margin-top: 15px;">The five friends became official plane spotters, watching the skies from Stella's roof.</p>
-                <p style="margin-top: 15px;">One amazing day, they saw SPITFIRES arriving! Brand new fighters from an aircraft carrier!</p>
-                <p style="margin-top: 15px;">A Canadian pilot with a cocky grin found them. "Name's Beurling. Buzz for short. You kids spotting planes?"</p>
+                <p style="margin-top: 15px;">The five friends became official plane spotters, watching the skies from
+                    Stella's roof.</p>
+                <p style="margin-top: 15px;">One amazing day, they saw SPITFIRES arriving! Brand new fighters from an
+                    aircraft carrier!</p>
+                <p style="margin-top: 15px;">A Canadian pilot with a cocky grin found them. "Name's Beurling. Buzz for
+                    short. You kids spotting planes?"</p>
                 <p style="margin-top: 15px;">"Yes sir!" they all replied.</p>
                 <p style="margin-top: 15px;">"Good. You spot 'em, I'll shoot 'em down."</p>
-                <p style="margin-top: 15px;">Over the next weeks, they watched Buzz become a legend—27 enemy aircraft shot down! The Maltese called him "The Falcon of Malta."</p>
+                <p style="margin-top: 15px;">Over the next weeks, they watched Buzz become a legend—27 enemy aircraft
+                    shot down! The Maltese called him "The Falcon of Malta."</p>
                 <p style="margin-top: 15px;">"See?" Marco said. "Even kids can help win a war!"</p>
             </div>
             <div class="page-number">5</div>
@@ -160,28 +190,38 @@
 
         <!-- PAGE 6: STELLA UNDER FIRE & SALVO -->
         <div class="page">
-            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="top: 30px; left: 30px; transform: rotate(90deg);" onclick="foundRabbit(this)">
-            <div class="interactive-overlay" style="bottom: 80px; left: 40px; font-size: 50px;" onclick="fireCannon(this)" title="Bombs!">💣</div>
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="top: 30px; left: 30px; transform: rotate(90deg);" onclick="foundRabbit(this)">
+            <div class="interactive-overlay" style="bottom: 80px; left: 40px; font-size: 50px;"
+                onclick="fireCannon(this)" title="Bombs!">💣</div>
             <div class="illustration">
-                <img src="assets/images/real_stella/window_view.jpg" alt="View from Stella" style="border: 5px solid #fff; width: 80%;">
+                <img src="assets/images/real_stella/window_view.jpg" alt="View from Stella"
+                    style="border: 5px solid #fff; width: 80%;">
             </div>
             <div class="text-content">
                 <h1>Stella Survives Again!</h1>
                 <p>One May morning, German Stukas attacked. Their screaming sirens were terrifying!</p>
-                <p style="margin-top: 15px;">BOOM! A bomb hit near Stella. Windows shattered. Part of the roof collapsed.</p>
-                <p style="margin-top: 15px;">The five friends helped dig through rubble. Mary Ellul arrived, lifting heavy beams.</p>
-                <p style="margin-top: 15px;">Then came <strong>Salvo</strong>, a master carpenter. "This house survived 1565. It will survive 1942. Let me fix those windows."</p>
-                <p style="margin-top: 15px;">For weeks, they all helped rebuild. Salvo crafted beautiful new timber window frames. The five friends hauled wood and held boards.</p>
-                <p style="margin-top: 15px;">"Everyone helps," Salvo said. "<em>Non nobis tantum nati.</em> Even kids!"</p>
+                <p style="margin-top: 15px;">BOOM! A bomb hit near Stella. Windows shattered. Part of the roof
+                    collapsed.</p>
+                <p style="margin-top: 15px;">The five friends helped dig through rubble. Mary Ellul arrived, lifting
+                    heavy beams.</p>
+                <p style="margin-top: 15px;">Then came <strong>Salvo</strong>, a master carpenter. "This house survived
+                    1565. It will survive 1942. Let me fix those windows."</p>
+                <p style="margin-top: 15px;">For weeks, they all helped rebuild. Salvo crafted beautiful new timber
+                    window frames. The five friends hauled wood and held boards.</p>
+                <p style="margin-top: 15px;">"Everyone helps," Salvo said. "<em>Non nobis tantum nati.</em> Even kids!"
+                </p>
             </div>
             <div class="page-number">6</div>
         </div>
 
         <!-- PAGE 7: THE ANZAC CONNECTION & SIR KEITH PARK -->
         <div class="page">
-            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="bottom: 60px; right: 60px; transform: rotate(-10deg);" onclick="foundRabbit(this)">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="bottom: 60px; right: 60px; transform: rotate(-10deg);" onclick="foundRabbit(this)">
             <div class="illustration" onclick="animateElement(this, 'glow')">
-                <div style="text-align: center; padding: 30px; background: rgba(255,255,255,0.95); border-radius: 15px; border: 5px solid #8b0000;">
+                <div
+                    style="text-align: center; padding: 30px; background: rgba(255,255,255,0.95); border-radius: 15px; border: 5px solid #8b0000;">
                     <h2 style="font-family: 'Chewy'; font-size: 28px; color: #8b0000;">🇳🇿 The Kiwi Commander 🇳🇿</h2>
                     <p style="font-size: 20px; margin-top: 15px; line-height: 1.8;">
                         <strong>Air Chief Marshal<br>Sir Keith Park</strong><br>
@@ -193,61 +233,97 @@
             <div class="text-content">
                 <h1>The ANZAC Connection</h1>
                 <p><strong>For Australian & New Zealand Kids:</strong></p>
-                <p style="margin-top: 15px;">One day, the five friends met the commander of Malta's defenses—<strong>Air Chief Marshal Keith Park</strong> from New Zealand!</p>
-                <p style="margin-top: 15px;">"G'day, young spotters," Park said in his Kiwi accent. "Good on ya for helping out."</p>
+                <p style="margin-top: 15px;">One day, the five friends met the commander of Malta's defenses—<strong>Air
+                        Chief Marshal Keith Park</strong> from New Zealand!</p>
+                <p style="margin-top: 15px;">"G'day, young spotters," Park said in his Kiwi accent. "Good on ya for
+                    helping out."</p>
                 <p style="margin-top: 15px;">"Are there other Australians and New Zealanders here?" Wally asked.</p>
-                <p style="margin-top: 15px;">"Mate, ANZAC pilots are flying Spitfires right now! And after Gallipoli in 1915, thousands of wounded ANZACs were treated in Malta's hospitals. Malta and the ANZACs—we're old friends."</p>
-                <p style="margin-top: 15px;">That night, Laurence showed them Pietà Military Cemetery. "204 Australians and 72 New Zealanders rest here. Malta remembers."</p>
+                <p style="margin-top: 15px;">"Mate, ANZAC pilots are flying Spitfires right now! And after Gallipoli in
+                    1915, thousands of wounded ANZACs were treated in Malta's hospitals. Malta and the ANZACs—we're old
+                    friends."</p>
+                <p style="margin-top: 15px;">That night, Laurence showed them Pietà Military Cemetery. "204 Australians
+                    and 72 New Zealanders rest here. Malta remembers."</p>
             </div>
             <div class="page-number">7</div>
         </div>
 
         <!-- PAGE 7.5: VICTORY DAY REGATTA - TRADITION CONTINUES -->
         <div class="page">
-            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="top: 50px; left: 45%; transform: rotate(-15deg);" onclick="foundRabbit(this)">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="top: 50px; left: 45%; transform: rotate(-15deg);" onclick="foundRabbit(this)">
             <div class="illustration" onclick="animateElement(this, 'sail')">
-                <div style="position: relative; width: 100%; height: 100%; background: linear-gradient(to bottom, #87CEEB 0%, #4682B4 60%, #2E5C8A 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; border: 5px solid #d32f2f; outline: 3px solid #ffd54f; outline-offset: -8px;">
-                    <div style="position: absolute; font-size: 70px; left: 15%; top: 25%; animation: sail 4s ease-in-out infinite; filter: hue-rotate(330deg);">🚣</div>
-                    <div style="position: absolute; font-size: 70px; left: 45%; top: 35%; animation: sail 3.5s ease-in-out infinite 0.5s; filter: hue-rotate(330deg);">🚣</div>
-                    <div style="position: absolute; font-size: 70px; left: 70%; top: 30%; animation: sail 4.5s ease-in-out infinite 1s; filter: hue-rotate(330deg);">🚣</div>
-                    <div style="position: absolute; bottom: 15%; left: 50%; transform: translateX(-50%); font-size: 50px;">🏰</div>
-                    <div style="position: absolute; top: 10%; right: 15%; font-size: 35px; animation: float 2s ease-in-out infinite;">🎆</div>
-                    <div style="position: absolute; top: 15%; left: 15%; font-size: 35px; animation: float 2.5s ease-in-out infinite;">🎊</div>
+                <div
+                    style="position: relative; width: 100%; height: 100%; background: linear-gradient(to bottom, #87CEEB 0%, #4682B4 60%, #2E5C8A 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; border: 5px solid #d32f2f; outline: 3px solid #ffd54f; outline-offset: -8px;">
+                    <div
+                        style="position: absolute; font-size: 70px; left: 15%; top: 25%; animation: sail 4s ease-in-out infinite; filter: hue-rotate(330deg);">
+                        🚣</div>
+                    <div
+                        style="position: absolute; font-size: 70px; left: 45%; top: 35%; animation: sail 3.5s ease-in-out infinite 0.5s; filter: hue-rotate(330deg);">
+                        🚣</div>
+                    <div
+                        style="position: absolute; font-size: 70px; left: 70%; top: 30%; animation: sail 4.5s ease-in-out infinite 1s; filter: hue-rotate(330deg);">
+                        🚣</div>
+                    <div
+                        style="position: absolute; bottom: 15%; left: 50%; transform: translateX(-50%); font-size: 50px;">
+                        🏰</div>
+                    <div
+                        style="position: absolute; top: 10%; right: 15%; font-size: 35px; animation: float 2s ease-in-out infinite;">
+                        🎆</div>
+                    <div
+                        style="position: absolute; top: 15%; left: 15%; font-size: 35px; animation: float 2.5s ease-in-out infinite;">
+                        🎊</div>
                 </div>
             </div>
             <div class="text-content">
                 <h1>Victory Day Lives On!</h1>
                 <p><strong>September 8, 1943 - And Every Year Since</strong></p>
-                <p style="margin-top: 15px;">When the WWII siege finally ended, Malta celebrated with the traditional <strong>Victory Day Regatta</strong>—the same race that began after the 1565 siege!</p>
-                <p style="margin-top: 15px;">The five friends ran down to the Grand Harbour bastions. Grandmother came too, bringing everyone to watch.</p>
-                <p style="margin-top: 15px;">"Look!" shouted Seraphine. "The <strong>Senglea boat</strong> with the RED and YELLOW flags!"</p>
-                <p style="margin-top: 15px;">The traditional <em>frejgatini</em> and <em>kajjikki</em> boats raced across the harbor. Crowds cheered from Valletta, Birgu, and Senglea's bastions. The Senglea crew rowed with all their might, their red and yellow pennants streaming behind them.</p>
-                <p style="margin-top: 15px;">Grandmother smiled. "The first Wally Worner saw the first Victory Day Regatta in 1565. Now you five are watching it celebrate two victories—1565 AND 1943!"</p>
-                <p style="margin-top: 15px; font-size: 14px; color: #d32f2f; font-weight: bold;">🏆 In 2023, Senglea won the Regatta Shield after a decade! In 2025, they won again! 🏆</p>
-                <p style="margin-top: 10px; font-size: 14px; color: #ffd54f; background: #d32f2f; padding: 8px; border-radius: 10px; text-align: center;"><strong>Every September 8th, the tradition continues in Grand Harbour!</strong></p>
+                <p style="margin-top: 15px;">When the WWII siege finally ended, Malta celebrated with the traditional
+                    <strong>Victory Day Regatta</strong>—the same race that began after the 1565 siege!</p>
+                <p style="margin-top: 15px;">The five friends ran down to the Grand Harbour bastions. Grandmother came
+                    too, bringing everyone to watch.</p>
+                <p style="margin-top: 15px;">"Look!" shouted Seraphine. "The <strong>Senglea boat</strong> with the RED
+                    and YELLOW flags!"</p>
+                <p style="margin-top: 15px;">The traditional <em>frejgatini</em> and <em>kajjikki</em> boats raced
+                    across the harbor. Crowds cheered from Valletta, Birgu, and Senglea's bastions. The Senglea crew
+                    rowed with all their might, their red and yellow pennants streaming behind them.</p>
+                <p style="margin-top: 15px;">Grandmother smiled. "The first Wally Worner saw the first Victory Day
+                    Regatta in 1565. Now you five are watching it celebrate two victories—1565 AND 1943!"</p>
+                <p style="margin-top: 15px; font-size: 14px; color: #d32f2f; font-weight: bold;">🏆 In 2023, Senglea won
+                    the Regatta Shield after a decade! In 2025, they won again! 🏆</p>
+                <p
+                    style="margin-top: 10px; font-size: 14px; color: #ffd54f; background: #d32f2f; padding: 8px; border-radius: 10px; text-align: center;">
+                    <strong>Every September 8th, the tradition continues in Grand Harbour!</strong></p>
             </div>
             <div class="page-number">7½</div>
         </div>
 
         <!-- PAGE 8: VICTORY & THE GEORGE CROSS -->
         <div class="page">
-            <img src="assets/images/rabbit.png" class="hidden-rabbit" style="top: 20px; left: 50%; transform: translateX(-50%);" onclick="foundRabbit(this)">
+            <img src="assets/images/rabbit.png" class="hidden-rabbit"
+                style="top: 20px; left: 50%; transform: translateX(-50%);" onclick="foundRabbit(this)">
             <div class="illustration">
                 <div class="illustration-group">
-                    <img src="assets/images/victory_feast.png" alt="Victory" class="page8-knight click-wiggle" style="width: 45%;">
-                    <img src="assets/images/real_stella/kitchen.jpg" alt="Stella Kitchen" class="page8-house click-glow" style="border: 5px solid white; width: 45%;">
+                    <img src="assets/images/victory_feast.png" alt="Victory" class="page8-knight click-wiggle"
+                        style="width: 45%;">
+                    <img src="assets/images/real_stella/kitchen.jpg" alt="Stella Kitchen" class="page8-house click-glow"
+                        style="border: 5px solid white; width: 45%;">
                 </div>
             </div>
             <div class="text-content">
                 <h1>Stella Shines On</h1>
                 <p>By November 1942, the siege was over. Malta had survived!</p>
-                <p style="margin-top: 15px;">The entire island received the <strong>George Cross</strong>—the highest honor—for collective bravery.</p>
-                <p style="margin-top: 15px;">The five friends stood on Stella's repaired roof, looking at Salvo's beautiful window frames and the peaceful harbor.</p>
+                <p style="margin-top: 15px;">The entire island received the <strong>George Cross</strong>—the highest
+                    honor—for collective bravery.</p>
+                <p style="margin-top: 15px;">The five friends stood on Stella's repaired roof, looking at Salvo's
+                    beautiful window frames and the peaceful harbor.</p>
                 <p style="margin-top: 15px;">"Two sieges," said Wally. "1565 and 1942. Both times, Stella survived."</p>
                 <p style="margin-top: 15px;">"Because of people like us," added Seraphine. "Working together."</p>
-                <p style="margin-top: 15px;">Grandmother hung the old coat of arms back on the wall. "Two Wally Worners. Same house. Same values. Same unbreakable spirit."</p>
-                <p style="margin-top: 15px;"><strong>And today, Stella still stands at 38 Triq il-Kurcifiss—a star that never stopped shining!</strong></p>
-                <p style="text-align: center; margin-top: 15px; font-family: 'Chewy'; font-size: 18px; color: #8b0000;">The End</p>
+                <p style="margin-top: 15px;">Grandmother hung the old coat of arms back on the wall. "Two Wally Worners.
+                    Same house. Same values. Same unbreakable spirit."</p>
+                <p style="margin-top: 15px;"><strong>And today, Stella still stands at 38 Triq il-Kurcifiss—a star that
+                        never stopped shining!</strong></p>
+                <p style="text-align: center; margin-top: 15px; font-family: 'Chewy'; font-size: 18px; color: #8b0000;">
+                    The End</p>
             </div>
             <div class="page-number">8</div>
         </div>
@@ -284,7 +360,9 @@
             </div>
 
             <!-- Spitfires -->
-            <div style="position: absolute; top: 30%; right: 20%; font-size: 40px; animation: fly 3s ease-in-out infinite;">✈️</div>
+            <div
+                style="position: absolute; top: 30%; right: 20%; font-size: 40px; animation: fly 3s ease-in-out infinite;">
+                ✈️</div>
 
             <p style="margin-top: 10px; font-family: 'Chewy'; font-size: 20px;">Explore WWII Malta!</p>
         </div>
